@@ -1,5 +1,6 @@
 # Function return the maximum number in array
 # Author: Dmitry Kryukov
+
 max <- function(array){
   res <- -9999999999999999
   for(elem in array){
