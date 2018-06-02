@@ -26,4 +26,4 @@ mode <- function(array){
 }
 
 array <- c(0,1,1,2,2,2,3,3,3,3,3,3,5,5,5,4,5,6,4,5,5,6,6) #3
-print(mode(array))
+print(mode(array)) 
