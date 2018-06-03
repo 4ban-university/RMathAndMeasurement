@@ -3,7 +3,7 @@
 
 source("stdlib.R")
 
-mode <- function(array){
+ModeF <- function(array){
   counter <- 1
   tempCount <- 0
   res <- array[1]

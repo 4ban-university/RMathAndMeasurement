@@ -1,7 +1,7 @@
 # Function return the maximum number in array
 # Author: Dmitry Kryukov
 
-Max <- function(array){
+MaxF <- function(array){
   M <- -9999999999999999
   for(elem in array){
     if(elem > M){
