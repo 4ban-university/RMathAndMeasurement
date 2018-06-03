@@ -1,0 +1,142 @@
+\documentclass[12pt]{article}
+
+\usepackage{listings}
+\usepackage{cite}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage[left=2cm,right=2cm,
+    top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
+
+\title{SOEN 6611 \\ SOFTWARE MEASUREMENT \\ Deliverable 1
+(DESCRIPTIVE-STATISTICS)}
+\date{SUMMER 2018}     
+\author{(Team F)\\ 
+Mehak Jot Kaur\\
+Roopamdeep Kaur\\
+Sukhmeet Kaur\\
+Amandeep Kaur Khosa\\
+Kritika Kritika\\
+Dmitry Kryukov
+}
+%\setcounter{secnumdepth}{0}
+\newcommand\tabularhead[1]{
+\begin{table}[h]
+  \caption{Use case - #1}
+  \begin{tabular}{|p{0.4\linewidth}|p{0.55\linewidth}|}
+    \hline
+    \textbf{Use case name} & \textbf{#1} \\
+    \hline}
+
+  \newcommand\addrow[2]{#1 &#2\\ \hline}
+
+  \newcommand\addmulrow[2]{ \begin{minipage}[t][][t]{2.5cm}#1\end{minipage}% 
+     &\begin{minipage}[t][][t]{8cm}
+      \begin{enumerate} #2   \end{enumerate}
+      \end{minipage}\\ \hline}
+
+  \newenvironment{usecase}{\tabularhead}
+{\hline\end{tabular}\end{table}}
+% start of the document
+\begin{document}            
+\maketitle                  
+\newpage
+%-----------------------------------------------------------------
+\section{Part - GQM}      
+\subsection{Goal}
+
+The goal of the descriptive-statistics project is to create a online school grading system to increase the efficiency of the studying process both for professors and students. The system will use descriptive statistics to show student grades, average grade, maximum grade, etc. Different actors will have different levels of access. Administrators can access every part of the statistical data and settings of the system and can't see the student related information. Students can see only their grades, average grade for the course, maximum and minimum grades, they have not access to the statistical data and other students grades. Professors have access to every part of the statistics and can edit this data if needed, see grades of all students, update grades.\cite{GQM} \cite{GQM-approach} \cite{GQM-wiki}
+
+\subsection{Questions}
+
+\begin{itemize}
+   \item Question 1: How to understand that descriptive-statistics functions returns the correct results?\\
+   Metric: Create a set of unit tests that will check the correctness of the results.
+   \item Question 2: How to ensure that the student can get the grade less than 10 sec?\\
+   Metric: Create a time-based tests to evaluate the time response of the system
+   \item  How to ensure that the descriptive-statistics functions return results in less than 2 sec? \\
+   Metric: Create a set of time-based unit tests to evaluate the speed of functions runtime.
+   \item Question 4: How to ensure that the all users satisfied the online grading system?\\
+   Metric: Create a quiz and collect the answers.
+   \item Question 5: How to ensure that the system is effective for the students?\\
+   Metric: Count the number of visits of the system per months by students.
+   \item Question 6: How to ensure that the system is effective for the professors?\\
+   Metric: Count the number of visits of the systems per month by professors.
+   \item Question 7: What is inadequacy in the current working system?
+   Metric: Calculate defect density.
+   \item Question 8: How to ensure that the professors can update the any grade in the system in less than a minute?\\
+   Metric: Create an integration test to test that action.
+   \item Question 9: What are the bottlenecks of increasing effectiveness of the system?\\
+   Metric: Time needed to do any action in the system.
+   \item Question 10: How students can track their performance?
+   Metric: By tracking metrics like GPA, rank in class, or 1st year performance in core subjects over time, they can identify both negative and positive patterns.
+   \item Question 11: How much is the current reliability of the system?
+   Metric: Mean Time to repair
+   \item Question 12: What is the effectiveness level of testing process of system?
+   Metric: Calculate defect removal efficiency.
+   \item Question 13: What is current level of test coverage?
+   Metric: Find number of failures.
+   \item Question 14: How much people are needed to maintain this grading software ?
+   Metric: Calculate assignment scope metric which will see how many people are needed to maintain this software and compare trends.
+
+
+\end{itemize}
+%-----------------------------------------------------------------
+\section{Part - Use case model}
+\includegraphics[width=\textwidth]{use-case-diagram-elements.png}
+
+\subsection{Use cases}
+
+%-----------------------------------------------------------------
+\section{Part - Estimates of effort}
+\subsection{UCP}
+\subsection{COCOMO 81}
+\subsection{Difference in estimates using UCP and COCOMO 81}
+%-----------------------------------------------------------------
+\section{Part - Implementation}
+\subsection{Code listings}
+\subsubsection{Max function}
+
+\begin{lstlisting}[language=R]
+max <- function(array){
+  res <- -9999999999999999
+  for(elem in array){
+    if(elem > res){
+      res <- elem
+    }
+  }
+  return(res)
+}
+\end{lstlisting}
+\subsubsection{Min function}
+
+\begin{lstlisting}[language=R]
+min <- function(array){
+  res <- 9999999999999999
+  for(elem in array){
+    if(elem < res){
+      res <- elem
+    }
+  }
+  return(res)
+}
+\end{lstlisting}
+
+\subsection{Testing}
+
+%-----------------------------------------------------------------
+\section{Part - Cyclomatic complexity}
+
+%-----------------------------------------------------------------
+\section{Part - Object-oriented metrics}
+
+%-----------------------------------------------------------------
+\section{Part - SLOC}
+
+%-----------------------------------------------------------------
+\section{{Part - Correlations}}
+
+%-----------------------------------------------------------------
+%Don't delete below
+\bibliography{ref}{}
+\bibliographystyle{plain}
+\end{document}               % End of document.
