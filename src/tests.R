@@ -5,6 +5,7 @@ source("stdlib.R")
 source("min.R")
 source("max.R")
 source("mode.R")
+source("mean.R")
 
 library('testthat')
 

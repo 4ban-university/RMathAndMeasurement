@@ -11,7 +11,7 @@ len <- function(array){
 }
 
 # Return sqrt of a number
-sqrtB <- function(number){
+sqrtFB <- function(number){
   if(number == 0){
     return(number)
   }
