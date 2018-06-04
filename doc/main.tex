@@ -3,7 +3,35 @@
 \usepackage{listings}
 \usepackage{cite}
 \usepackage{graphicx}
-\usepackage{booktabs}
+\usepackage{color}
+ 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{codeblue}{rgb}{0.7,0.8,0.215}
+ 
+\lstdefinestyle{newStyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{blue},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+ 
+\lstset{style=newstyle}
+
 \usepackage[left=2cm,right=2cm,
     top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
 
@@ -22,18 +50,27 @@ Dmitry Kryukov
 \newcommand\tabularhead[1]{
 \begin{table}[h]
   \caption{Use case - #1}
-  \begin{tabular}{|p{0.4\linewidth}|p{0.55\linewidth}|}
+  \begin{tabular}{|p{0.35\linewidth}|p{0.65\linewidth}|}
     \hline
     \textbf{Use case name} & \textbf{#1} \\
     \hline}
 
   \newcommand\addrow[2]{#1 &#2\\ \hline}
-
+  
+  \newcommand\adddoublerow[2]{\begin{minipage}[t][][t]{2.5cm}#1\end{minipage}%
+    &\begin{minipage}[t][][t]{\linewidth}
+     \begin{itemize}\setlength{\itemsep}{0pt}%
+        #2     
+     \end{itemize}
+     \end{minipage}\\ \hline}
+  
   \newcommand\addmulrow[2]{ \begin{minipage}[t][][t]{2.5cm}#1\end{minipage}% 
-     &\begin{minipage}[t][][t]{8cm}
-      \begin{enumerate} #2   \end{enumerate}
+     &\begin{minipage}[t][][t]{\linewidth}
+      \begin{enumerate}\setlength{\itemsep}{0pt}%
+        #2   
+      \end{enumerate}
       \end{minipage}\\ \hline}
-
+      
   \newenvironment{usecase}{\tabularhead}
 {\hline\end{tabular}\end{table}}
 % start of the document
@@ -82,31 +119,100 @@ The goal of the descriptive-statistics project is to create a online school grad
 \end{itemize}
 %-----------------------------------------------------------------
 \section{Part - Use case model}
-\includegraphics[width=\textwidth]{use-case-diagram-elements.png}
+Use case model represent the interaction between actors and the system and shows the relationships between the actors and different use cases.\cite{UCM}
+%\includegraphics[width=\textwidth]{UCM.png}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{UCM.png}
+\caption{Use case model}
+\end{figure}
 
 \subsection{Use cases}
+\begin{usecase}{Delete the grades}
+    \addrow{Actors}{Professor}
+    \addrow{Precondition}{Professor has access to the system}
+    \addrow{Postcondition}{Professor deletes the grades.}
+    \addmulrow{Main scenario (M)}{
+        \item Professor login to the system
+        \item System shows the list of available courses
+        \item Professor chooses the desirable course
+        \item System shows the list of students with its grades
+        \item Professor chooses the student
+        \item Professor delete the grade
+    }
+    \adddoublerow{Extensions (E)}{
+        \item[] 1.1. Professor can't login
+        \item[] 1.2. System suggest to contact to the Administrator
+        \item[] 1.3. Go to 1
+    }
+\end{usecase}
+
+\begin{usecase}{Update the grades}
+    \addrow{Actors}{Professor}
+    \addrow{Precondition}{Professor has access to the system}
+    \addrow{Postcondition}{Professor updates the grades.}
+    \addmulrow{Main scenario (M)}{
+        \item Professor login to the system
+        \item System shows the list of available courses
+        \item Professor chooses the desirable course
+        \item System shows the list of students with its grades
+        \item Professor chooses the student
+        \item Professor updates the grade
+    }
+    \adddoublerow{Extensions (E)}{
+        \item[] 1.1. Professor can't login
+        \item[] 1.2. System suggest to contact to the Administrator
+        \item[] 1.3. Go to 1
+    }
+\end{usecase}
+\newpage
+\begin{usecase}{View all grades}
+    \addrow{Actors}{Professor}
+    \addrow{Precondition}{Professor has access to the system}
+    \addrow{Postcondition}{Professor gets the all grades.}
+    \addmulrow{Main scenario (M)}{
+        \item Professor login to the system
+        \item System shows the list of available courses
+        \item Professor chooses the desirable course
+        \item Professor see the grades
+    }
+    \adddoublerow{Extensions (E)}{
+        \item[] 1.1. Professor can't login
+        \item[] 1.2. System suggest to contact to the Administrator
+        \item[] 1.3. Go to 1
+    }
+\end{usecase}
+
+\begin{usecase}{Assign the grades}
+    \addrow{Actors}{Professor}
+    \addrow{Precondition}{Professor has access to the system}
+    \addrow{Postcondition}{Professor assigns the grades.}
+    \addmulrow{Main scenario (M)}{
+        \item Professor login to the system
+        \item System shows the list of available courses
+        \item Professor chooses the desirable course
+        \item System shows the list of students with its grades
+        \item Professor assigns the grade
+    }
+    \adddoublerow{Extensions (E)}{
+        \item[] 1.1. Professor can't login
+        \item[] 1.2. System suggest to contact to the Administrator
+        \item[] 1.3. Go to 1
+    }
+\end{usecase}
 
 %-----------------------------------------------------------------
 \section{Part - Estimates of effort}
 \subsection{UCP}
+hello world
 \subsection{COCOMO 81}
+hello world
 \subsection{Difference in estimates using UCP and COCOMO 81}
+hello world
 %-----------------------------------------------------------------
 \section{Part - Implementation}
 \subsection{Code listings}
-\subsubsection{Max function}
-
-\begin{lstlisting}[language=R]
-max <- function(array){
-  res <- -9999999999999999
-  for(elem in array){
-    if(elem > res){
-      res <- elem
-    }
-  }
-  return(res)
-}
-\end{lstlisting}
+The code listing of implemented functions.
 \subsubsection{Min function}
 
 \begin{lstlisting}[language=R]
@@ -121,6 +227,19 @@ min <- function(array){
 }
 \end{lstlisting}
 
+\subsubsection{Max function}
+
+\begin{lstlisting}[language=R]
+max <- function(array){
+  res <- -9999999999999999
+  for(elem in array){
+    if(elem > res){
+      res <- elem
+    }
+  }
+  return(res)
+}
+\end{lstlisting}
 \subsection{Testing}
 
 %-----------------------------------------------------------------
