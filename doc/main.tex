@@ -81,46 +81,58 @@ Dmitry Kryukov
 \newpage
 %-----------------------------------------------------------------
 \section{Introduction}
-hello world
+The purpose of the descriptive-statistics is engaged with the processing of empirical data, quantitatively describe a sets of information and systematization of the data. 
+
+The considered project is a module which should integrate to the Online Grading System and help to improve users experience by using descriptive-statistics features. For that project were implemented from scratch a several functions: Minimum, Maximum, Mode, Median, Arithmetic Mean and Standard Deviation. According to the requirements, no built-in functions were used. The new functions were written from scratch and the whole project was written by using the R language.
+
+During development cycle the quality attributes such as efficiency, readability,  maintainability, understandability and usability were taken into account and described in code as correct as possible..
+
 %-----------------------------------------------------------------
 \section{Part - GQM}      
 \subsection{Goal}
 Create a module to \textbf{improve} the \textbf{efficiency} of studying process from the point of view of \textbf{students and professors} in the context of \textbf{online grading system}. \par 
-The descriptive-statistics in the module shall provide more efficient and accurate data based on new minimum, maximum, mode, median, mean and deviation functions for assigning the grades. \cite{GQM} \cite{GQM-approach} \cite{GQM-wiki}
+The descriptive-statistics in the module shall provide more efficient and accurate data based on new minimum, maximum, mode, median, mean and deviation functions for assigning the grades. \cite{GQM-book2} \cite{GQM-book}  \cite{GQM-eduardo} \cite{GQM-Bjorn} \cite{GQM} \cite{GQM-approach} \cite{GQM-wiki} 
 
 \subsection{Questions}
 
 \begin{itemize}
-   \item Question 1: How to understand that descriptive-statistics functions returns the correct results?\\
-   Metric: Unit testing
-   \item Question 2: How to ensure that the student can get the grade less than 10 sec?\\
-   Metric: Time-based tests (to evaluate the time response of the system)
-   \item  How to ensure that the descriptive-statistics functions return results in less than 2 sec? \\
-   Metric: Time-based unit tests
-   \item Question 4: How to ensure that the all users satisfied the online grading system?\\
-   Metric: Student survey
-   \item Question 5: How to ensure that the system is effective for the students?\\
-   Metric: Number of visits of the system per months by students.
-   \item Question 6: How to ensure that the system is effective for the professors?\\
-   Metric: Number of visits of the systems per month by professors.
-   \item Question 7: What are the bottlenecks of increasing effectiveness of the system?\\
-   Metric: Action runtime
-   \item Question 8: How to ensure that the professors can update the any grade in the system in less than a minute?\\
-   Metric: Integration testing
-   \item Question 9: How many functions covered by documentation?\\
-   Metric: The ratio of the number of comments to the number of lines of code
-   \item Question 10: How to ensure that the code is maintainable?\\
-   Metric: Test coverage
-   \item Question 11: How to ensure that the code is easy to read for other developers?\\
-   Metric: The code corresponds to the convention
-   \item Question 12: How much effort are needed to develop this module?\\
-   Metric: Calculate the effort
-   \item Question 13: What is the maximum queue waiting time?\\
-   Metric: Total time spent in queue for every call answered.\\
-   Metric: Total time spent in queue for every person that hung up before their call was answered.
-
-
+    \item \textbf{Q1}: How many lines of code are the files on average?\\
+     M1: Number of files.\\
+     M2: Number of lines of code (SLOC) in the files.\\
+     M3: Average number of lines of code in the files. 
+    \item \textbf{Q2}: How to ensure that the descriptive-statistics functions return results in less than 2 sec? \\
+     M4: Time-based unit tests
+    \item \textbf{Q3}: How to ensure that the all users satisfied the module?\\
+     M5: Student survey
+    \item \textbf{Q4}: What is the defect/failures density?\\
+     M6: Number of failures reported by users per month\\
+     M2: Number of lines of code (SLOC) in the files.\\
+     M7: Number of failures per KLOC.
+    \item \textbf{Q5}: How to ensure that the code is maintainable?\\
+     M8: Test coverage.
+    \item \textbf{Q6}: How to ensure that the code is easy to read for other developers?\\
+     M9: The code corresponds to the convention (code stardard)
+    \item \textbf{Q7}: How many functions covered by documentation?\\
+     M10: Number of functions\\
+     M11: Number of comments\\
+     M12: The ratio of the number of comments to the SLOC
+    \item \textbf{Q8}: How many the unit tests are performed?\\
+     M13: The ratio of performed unit tests to the number of unit tests.
+    \item \textbf{Q9}: How to ensure that the descriptive-statistics functions return the correct results?\\
+     M8: Test coverage.\\
+     M14: Number of unit tests 
+    \item \textbf{Q10}: What are the bottlenecks of increasing effectiveness of the system?\\
+     M15: Action runtime
+    \item \textbf{Q11}: How to ensure that the module development is profitable?\\
+     M16: Effort estimation\\
+     M17: Cost estimation\\
+     M18: Duration estimation
+    \item \textbf{Q12}: How the developers are effective at finding failures?\\
+     M14: Number of unit tests\\
+     M6: Number of failures reported by users per month\\
+     M13: The ratio of performed unit tests to the number of unit tests. 
 \end{itemize}
+\newpage
 %-----------------------------------------------------------------
 \section{Part - Use case model}
 Use case model represent the interaction between actors and the system and shows the relationships between the actors and different use cases.\cite{UCM}
@@ -132,10 +144,10 @@ Use case model represent the interaction between actors and the system and shows
 \newpage
 \subsection{Use cases}
 
-\begin{usecase}{View the most frequent (Mode) grade for the course}
+\begin{usecase}{View the most frequent (Mode) for the course}
     \addrow{Actors}{Professor, Online Grading System}
     \addrow{Precondition}{Professor has access to the system}
-    \addrow{Postcondition}{Professor views the mode of grades}
+    \addrow{Postcondition}{Professor views the mode}
     \addmulrow{Main scenario (M)}{
         \item Professor logins to the system
         \item System through statistical data module connects to the Online Grading System
@@ -150,17 +162,17 @@ Use case model represent the interaction between actors and the system and shows
     }
 \end{usecase}
 
-\begin{usecase}{View the deviation of grades for the course}
+\begin{usecase}{View the deviation for the course}
     \addrow{Actors}{Professor, Online Grading System}
     \addrow{Precondition}{Professor has access to the system}
-    \addrow{Postcondition}{Professor views the deviation of grades}
+    \addrow{Postcondition}{Professor views the deviation}
     \addmulrow{Main scenario (M)}{
         \item Professor logins to the system
         \item System through statistical data module connects to the Online Grading System
         \item System shows the list of available courses
         \item Professor chooses the course to view
         \item System shows the statistics of the course
-        \item Professor views the deviation of grades
+        \item Professor views the deviation for the course
     }
     \adddoublerow{Extensions (E)}{
         \item[] 1.1. Professor entered the wrong credentials
@@ -168,17 +180,17 @@ Use case model represent the interaction between actors and the system and shows
     }
 \end{usecase}
 \newpage
-\begin{usecase}{View the median grade for the course}
+\begin{usecase}{View the median for the course}
     \addrow{Actors}{Professor, Online Grading System}
     \addrow{Precondition}{Professor has access to the system}
-    \addrow{Postcondition}{Professor views the median grade}
+    \addrow{Postcondition}{Professor views the median}
     \addmulrow{Main scenario (M)}{
         \item Professor logins to the system
         \item System through statistical data module connects to the Online Grading System
         \item System shows the list of available courses
         \item Professor chooses the course to view
         \item System shows the statistics of the course
-        \item Professor views the median grade
+        \item Professor views the median
     }
     \adddoublerow{Extensions (E)}{
         \item[] 1.1. Professor entered the wrong credentials
@@ -186,16 +198,16 @@ Use case model represent the interaction between actors and the system and shows
     }
 \end{usecase}
 
-\begin{usecase}{View average (Mean) grade for the course}
+\begin{usecase}{View average (Mean) for the course}
     \addrow{Actors}{Professor, Student, Online Grading System}
     \addrow{Precondition}{Professor has access to the system. Student has access to the system}
-    \addrow{Postcondition}{Professor views average (Mean) grade. Student views average (Mean) grade.}
+    \addrow{Postcondition}{Professor views average (Mean). Student views average (Mean).}
     \addmulrow{Main scenario (M)}{
         \item Professor or Student logins to the system
         \item System through statistical data module connects to the Online Grading System
         \item System shows the list of available courses for the user (Professor or Student)
         \item Professor or Student chooses the desirable course
-        \item System shows the average (Mean) grade for the course
+        \item System shows the average (Mean) for the course
     }
     \adddoublerow{Extensions (E)}{
         \item[] 1.1. Professor or Student entered the wrong credentials
@@ -203,16 +215,16 @@ Use case model represent the interaction between actors and the system and shows
     }
 \end{usecase}
 \newpage
-\begin{usecase}{View minimum grade for the course}
+\begin{usecase}{View minimum for the course}
     \addrow{Actors}{Professor, Student, Online Grading System}
     \addrow{Precondition}{Professor has access to the system. Student has access to the system}
-    \addrow{Postcondition}{Professor views minimum grade. Student views minimum grade.}
+    \addrow{Postcondition}{Professor views minimum.  Student views minimum.}
     \addmulrow{Main scenario (M)}{
         \item Professor or Student logins to the system
         \item System through statistical data module connects to the Online Grading System
         \item System shows the list of available courses for the user (Professor or Student)
         \item Professor or Student chooses the desirable course
-        \item System shows the minimum grade for the course
+        \item System shows the minimum for the course
     }
     \adddoublerow{Extensions (E)}{
         \item[] 1.1. Professor or Student entered the wrong credentials
@@ -220,16 +232,16 @@ Use case model represent the interaction between actors and the system and shows
     }
 \end{usecase}
 
-\begin{usecase}{View maximum grade for the course}
+\begin{usecase}{View maximum for the course}
     \addrow{Actors}{Professor, Student, Online Grading System}
     \addrow{Precondition}{Professor has access to the system. Student has access to the system}
-    \addrow{Postcondition}{Professor views maximum grade. Student views maximum grade.}
+    \addrow{Postcondition}{Professor views maximum. Student views maximum .}
     \addmulrow{Main scenario (M)}{
         \item Professor or Student logins to the system
         \item System through statistical data module connects to the Online Grading System
         \item System shows the list of available courses for the user (Professor or Student)
         \item Professor or Student chooses the desirable course
-        \item System shows the maximum grade for the course
+        \item System shows the maximum for the course
     }
     \adddoublerow{Extensions (E)}{
         \item[] 1.1. Professor or Student entered the wrong credentials
@@ -401,31 +413,69 @@ hello world
 \section{Part - Implementation}
 \subsection{Code listings}
 The code listing of implemented functions.
-\subsubsection{Min function}
 
+\subsubsection{Min function}
 \begin{lstlisting}[language=R]
-min <- function(array){
-  res <- 9999999999999999
-  for(elem in array){
-    if(elem < res){
-      res <- elem
+SoenMin <- function(array){
+  m <- 9999999999999999
+  for (elem in array) {
+    if (elem < m) {
+      m <- elem
     }
   }
-  return(res)
+  return(m)
 }
 \end{lstlisting}
-
 \subsubsection{Max function}
-
 \begin{lstlisting}[language=R]
-max <- function(array){
-  res <- -9999999999999999
-  for(elem in array){
-    if(elem > res){
-      res <- elem
+SoenMax <- function(array){
+  M <- -9999999999999999
+  for (elem in array) {
+    if (elem > M) {
+      M <- elem
     }
   }
-  return(res)
+  return(M)
+}
+\end{lstlisting}
+\subsubsection{Mode function}
+\begin{lstlisting}[language=R]
+source("stdlib.R")
+
+SoenMode <- function(array){
+  l <- len(array)
+  if (l == 0) {
+    return("Empty array")
+  }
+  if (l == 1) {
+    return(array)
+  }
+  array <- SoenSort(array)
+  max.counter <- 1
+  current.counter <- 1
+  o <- vector()
+  for (elem in c(2:l)) {
+    if (array[elem] == array[elem - 1]) {
+      current.counter <- current.counter + 1
+    } else {
+        if (current.counter == max.counter) {
+          o <- c(o, array[elem-1])
+        }
+        if (current.counter > max.counter) {
+          max.counter <- current.counter
+          o <- array[elem-1]
+        }
+        current.counter <- 1
+     }
+  }
+  
+  if (current.counter > max.counter) {
+    o <- array[l]
+  }
+  if (max.counter == current.counter) {
+    o <- c(o, array[l])
+  }
+  return(o)
 }
 \end{lstlisting}
 \subsection{Testing}
