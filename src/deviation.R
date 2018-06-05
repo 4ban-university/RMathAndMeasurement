@@ -4,18 +4,18 @@
 source("stdlib.R")
 source("mean.R")
 
-DeviationF <- function(array){
+SoenDeviation <- function(array){
   l <- len(array)
-  if(l == 0){
+  if (l == 0) {
     return("Empty array")
   }
-  mu <- MeanF(array)
+  mu <- SoenMean(array)
   omega <- 0
   
-  for(elem in array){
+  for (elem in array) {
     omega <- omega+(elem-mu)^2
   }
   omega <- omega/l
-  omega <- sqrtFB(omega)
+  omega <- SoenSqrtA(omega)
   return(omega)
 }

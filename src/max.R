@@ -1,10 +1,10 @@
 # Function return the maximum number in array
 # Author: Dmitry Kryukov
 
-MaxF <- function(array){
+SoenMax <- function(array){
   M <- -9999999999999999
-  for(elem in array){
-    if(elem > M){
+  for (elem in array) {
+    if (elem > M) {
       M <- elem
     }
   }

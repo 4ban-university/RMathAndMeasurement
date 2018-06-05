@@ -2,20 +2,20 @@
 # Author: Dmitry Kryukov
 
 # Return len of an array
-len <- function(array){
+SoenLen <- function(array){
   count <- 0
-  for(elem in array){
+  for (elem in array){
     count <- count+1
   }
   return(count)
 }
 
 # Return sqrt of a number
-sqrtFB <- function(number){
-  if(number == 0){
+SoenSqrtA <- function(number){
+  if (number == 0) {
     return(number)
   }
-  if(number == 1){
+  if (number == 1) {
     return(number)
   }
   low = 0
@@ -33,19 +33,17 @@ sqrtFB <- function(number){
 }
 
 # Return sqrt of a number
-sqrtC <- function(number){
+SoenSqrtB <- function(number){
   i <- 0
   j <- number/2+1
   
-  while(i <= j){
+  while (i <= j){
     mid <- (i+j)/2
-    if(number/mid == mid){
+    if (number/mid == mid) {
       return(mid)
-    }
-    else if(mid < number/mid){
+    } else if (mid < number/mid) {
       i <- mid +1
-    }
-    else{
+    } else {
       j <- mid -1
     }
   }
@@ -53,7 +51,7 @@ sqrtC <- function(number){
 }
 
 # Return sorted array via quick sort
-sortB <- function(array){
+SoenSort <- function(array){
   l <- len(array)
   if (l > 1) {
     p = array[l %/% 2]
@@ -61,8 +59,7 @@ sortB <- function(array){
     middle = array[array == p]
     right =  sortB(array[array > p])
     return(c(left, middle, right))
-  }
-  else{
+  } else {
     return(array)
   }
 }
