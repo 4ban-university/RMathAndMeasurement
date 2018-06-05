@@ -9,6 +9,9 @@ SoenDeviation <- function(array){
   if (l == 0) {
     return("Empty array")
   }
+  if (l == 1) {
+    return("Too small data")
+  }
   mu <- SoenMean(array)
   omega <- 0
   

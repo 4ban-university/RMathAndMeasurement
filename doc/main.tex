@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{color}
+\usepackage{indentfirst}
  
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -32,7 +33,7 @@
 }
  
 \lstset{style=newstyle}
-
+\setcounter{section}{-1}
 \usepackage[left=2cm,right=2cm,
     top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
 
@@ -79,10 +80,13 @@ Dmitry Kryukov
 \maketitle                  
 \newpage
 %-----------------------------------------------------------------
+\section{Introduction}
+hello world
+%-----------------------------------------------------------------
 \section{Part - GQM}      
 \subsection{Goal}
-
-The goal of the descriptive-statistics project is to create an module for online school grading system to increase the quality and efficiency of the studying process both for professors and students. The module will use descriptive statistics to show student grades, average grade, maximum grade, most frequent grade and etc. Different actors will have different levels of access. Administrators can access every part of the system and module data needed to control the system, create and update accounts, view the errors logs, etc and can't see the student related information. Students can see only their grades, average grade for the course, maximum and minimum grades, they have no access to other statistical data and other students grades. Professors have access to every part of the statistical data and can edit this data if needed, see grades of all students, assign and update grades. The main purpose of the module is to increase quality of the grade calculations.\cite{GQM} \cite{GQM-approach} \cite{GQM-wiki}
+Create a module to \textbf{improve} the \textbf{efficiency} of studying process from the point of view of \textbf{students and professors} in the context of \textbf{online grading system}. \par 
+The descriptive-statistics in the module shall provide more efficient and accurate data based on new minimum, maximum, mode, median, mean and deviation functions for assigning the grades. \cite{GQM} \cite{GQM-approach} \cite{GQM-wiki}
 
 \subsection{Questions}
 
@@ -111,6 +115,10 @@ The goal of the descriptive-statistics project is to create an module for online
    Metric: The code corresponds to the convention
    \item Question 12: How much effort are needed to develop this module?\\
    Metric: Calculate the effort
+   \item Question 13: What is the maximum queue waiting time?\\
+   Metric: Total time spent in queue for every call answered.\\
+   Metric: Total time spent in queue for every person that hung up before their call was answered.
+
 
 \end{itemize}
 %-----------------------------------------------------------------
@@ -118,91 +126,19 @@ The goal of the descriptive-statistics project is to create an module for online
 Use case model represent the interaction between actors and the system and shows the relationships between the actors and different use cases.\cite{UCM}
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.89\textwidth]{UCM.png}
+\includegraphics[width=\textwidth]{UCMv2.png}
 \caption{Use case model}
 \end{figure}
 \newpage
 \subsection{Use cases}
 
-\begin{usecase}{Control the system}
-    \addrow{Actors}{Administrator, DB}
-    \addrow{Precondition}{Administrator has access to the system}
-    \addrow{Postcondition}{Administrator has full control of the system}
-    \addmulrow{Main scenario (M)}{
-        \item Administrator logins to the system
-        \item System shows the list of available commands, actions through DB queries
-        \item Administrator chooses needed action
-        \item System shows the result of the action in log
-    }
-    \adddoublerow{Extensions (E)}{
-        \item[] 1.1. Administrator entered the wrong credentials
-        \item[] 1.2. Go to 1
-    }
-\end{usecase}
-
-\begin{usecase}{Delete an account}
-    \addrow{Actors}{Administrator, DB}
-    \addrow{Precondition}{Administrator has access to the system}
-    \addrow{Postcondition}{Administrator delete an account}
-    \addmulrow{Main scenario (M)}{
-        \item Administrator logins to the system
-        \item System shows the list of available commands, actions through DB queries
-        \item Administrator chooses action to delete an account
-        \item System shows the list of available accounts
-        \item Administrator chooses which account to delete
-        \item Administrator deletes an account
-        \item System shows the result of the action in log
-    }
-    \adddoublerow{Extensions (E)}{
-        \item[] 1.1. Administrator entered the wrong credentials
-        \item[] 1.2. Go to 1
-    }
-\end{usecase}
-\newpage
-\begin{usecase}{Create an account}
-    \addrow{Actors}{Administrator, DB}
-    \addrow{Precondition}{Administrator has access to the system}
-    \addrow{Postcondition}{Administrator creates an account}
-    \addmulrow{Main scenario (M)}{
-        \item Administrator logins to the system
-        \item System shows the list of available commands, actions through DB queries
-        \item Administrator chooses action to create an account
-        \item System shows the form for creating an account
-        \item Administrator creates an account credentials
-        \item System shows the result of the action in log
-    }
-    \adddoublerow{Extensions (E)}{
-        \item[] 1.1. Administrator entered the wrong credentials
-        \item[] 1.2. Go to 1
-    }
-\end{usecase}
-
-\begin{usecase}{Update an account}
-    \addrow{Actors}{Administrator, DB}
-    \addrow{Precondition}{Administrator has access to the system}
-    \addrow{Postcondition}{Administrator updates an account}
-    \addmulrow{Main scenario (M)}{
-        \item Administrator logins to the system
-        \item System shows the list of available commands, actions through DB queries
-        \item Administrator chooses action to update an account
-        \item System shows the list of available accounts
-        \item Administrator chooses which account to update
-        \item Administrator updates an account
-        \item System shows the result of the action in log
-    }
-    \adddoublerow{Extensions (E)}{
-        \item[] 1.1. Administrator entered the wrong credentials
-        \item[] 1.2. Go to 1
-    }
-\end{usecase}
-\newpage
-\begin{usecase}{View the most frequent grade for the course}
-    \addrow{Actors}{Professor, DB}
+\begin{usecase}{View the most frequent (Mode) grade for the course}
+    \addrow{Actors}{Professor, Online Grading System}
     \addrow{Precondition}{Professor has access to the system}
     \addrow{Postcondition}{Professor views the mode of grades}
     \addmulrow{Main scenario (M)}{
         \item Professor logins to the system
-        \item System through statistical data module connects to the DB
+        \item System through statistical data module connects to the Online Grading System
         \item System shows the list of available courses
         \item Professor chooses the course to view
         \item System shows the statistics of the course
@@ -215,12 +151,12 @@ Use case model represent the interaction between actors and the system and shows
 \end{usecase}
 
 \begin{usecase}{View the deviation of grades for the course}
-    \addrow{Actors}{Professor, DB}
+    \addrow{Actors}{Professor, Online Grading System}
     \addrow{Precondition}{Professor has access to the system}
     \addrow{Postcondition}{Professor views the deviation of grades}
     \addmulrow{Main scenario (M)}{
         \item Professor logins to the system
-        \item System through statistical data module connects to the DB
+        \item System through statistical data module connects to the Online Grading System
         \item System shows the list of available courses
         \item Professor chooses the course to view
         \item System shows the statistics of the course
@@ -233,12 +169,12 @@ Use case model represent the interaction between actors and the system and shows
 \end{usecase}
 \newpage
 \begin{usecase}{View the median grade for the course}
-    \addrow{Actors}{Professor, DB}
+    \addrow{Actors}{Professor, Online Grading System}
     \addrow{Precondition}{Professor has access to the system}
     \addrow{Postcondition}{Professor views the median grade}
     \addmulrow{Main scenario (M)}{
         \item Professor logins to the system
-        \item System through statistical data module connects to the DB
+        \item System through statistical data module connects to the Online Grading System
         \item System shows the list of available courses
         \item Professor chooses the course to view
         \item System shows the statistics of the course
@@ -250,90 +186,16 @@ Use case model represent the interaction between actors and the system and shows
     }
 \end{usecase}
 
-\begin{usecase}{Delete the grades}
-    \addrow{Actors}{Professor, DB}
-    \addrow{Precondition}{Professor has access to the system}
-    \addrow{Postcondition}{Professor deletes the grades.}
-    \addmulrow{Main scenario (M)}{
-        \item Professor logins to the system
-        \item System through statistical data module connects to the DB
-        \item System shows the list of available courses
-        \item Professor chooses the desirable course
-        \item System shows the list of students with their grades
-        \item Professor chooses the student
-        \item Professor deletes the grade
-    }
-    \adddoublerow{Extensions (E)}{
-        \item[] 1.1. Professor entered the wrong credentials
-        \item[] 1.2. Go to 1
-    }
-\end{usecase}
-\newpage
-\begin{usecase}{Assign the grades}
-    \addrow{Actors}{Professor, DB}
-    \addrow{Precondition}{Professor has access to the system}
-    \addrow{Postcondition}{Professor assigns the grades.}
-    \addmulrow{Main scenario (M)}{
-        \item Professor logins to the system
-        \item System through statistical data module connects to the DB
-        \item System shows the list of available courses
-        \item Professor chooses the desirable course
-        \item System shows the list of students with their grades
-        \item Professor chooses the student
-        \item Professor assigns the grade
-    }
-    \adddoublerow{Extensions (E)}{
-        \item[] 1.1. Professor entered the wrong credentials
-        \item[] 1.2. Go to 1
-    }
-\end{usecase}
-
-\begin{usecase}{Update the grades}
-    \addrow{Actors}{Professor, DB}
-    \addrow{Precondition}{Professor has access to the system}
-    \addrow{Postcondition}{Professor updates the grades.}
-    \addmulrow{Main scenario (M)}{
-        \item Professor logins to the system
-        \item System through statistical data module connects to the DB
-        \item System shows the list of available courses
-        \item Professor chooses the desirable course
-        \item System shows the list of students with their grades
-        \item Professor chooses the student
-        \item Professor updates the grade
-    }
-    \adddoublerow{Extensions (E)}{
-        \item[] 1.1. Professor entered the wrong credentials
-        \item[] 1.2. Go to 1
-    }
-\end{usecase}
-\newpage
-\begin{usecase}{View all grades}
-    \addrow{Actors}{Professor, DB}
-    \addrow{Precondition}{Professor has access to the system}
-    \addrow{Postcondition}{Professor views the all grades.}
-    \addmulrow{Main scenario (M)}{
-        \item Professor logins to the system
-        \item System through statistical data module connects to the DB
-        \item System shows the list of available courses
-        \item Professor chooses the desirable course
-        \item System shows the list of students with their grades
-    }
-    \adddoublerow{Extensions (E)}{
-        \item[] 1.1. Professor entered the wrong credentials
-        \item[] 1.2. Go to 1
-    }
-\end{usecase}
-
-\begin{usecase}{View average grade for the course}
-    \addrow{Actors}{Professor, Student, DB}
+\begin{usecase}{View average (Mean) grade for the course}
+    \addrow{Actors}{Professor, Student, Online Grading System}
     \addrow{Precondition}{Professor has access to the system. Student has access to the system}
-    \addrow{Postcondition}{Professor views average grade. Student views average grade.}
+    \addrow{Postcondition}{Professor views average (Mean) grade. Student views average (Mean) grade.}
     \addmulrow{Main scenario (M)}{
         \item Professor or Student logins to the system
-        \item System through statistical data module connects to the DB
+        \item System through statistical data module connects to the Online Grading System
         \item System shows the list of available courses for the user (Professor or Student)
         \item Professor or Student chooses the desirable course
-        \item System shows the average grade for the course
+        \item System shows the average (Mean) grade for the course
     }
     \adddoublerow{Extensions (E)}{
         \item[] 1.1. Professor or Student entered the wrong credentials
@@ -342,12 +204,12 @@ Use case model represent the interaction between actors and the system and shows
 \end{usecase}
 \newpage
 \begin{usecase}{View minimum grade for the course}
-    \addrow{Actors}{Professor, Student, DB}
+    \addrow{Actors}{Professor, Student, Online Grading System}
     \addrow{Precondition}{Professor has access to the system. Student has access to the system}
     \addrow{Postcondition}{Professor views minimum grade. Student views minimum grade.}
     \addmulrow{Main scenario (M)}{
         \item Professor or Student logins to the system
-        \item System through statistical data module connects to the DB
+        \item System through statistical data module connects to the Online Grading System
         \item System shows the list of available courses for the user (Professor or Student)
         \item Professor or Student chooses the desirable course
         \item System shows the minimum grade for the course
@@ -359,35 +221,18 @@ Use case model represent the interaction between actors and the system and shows
 \end{usecase}
 
 \begin{usecase}{View maximum grade for the course}
-    \addrow{Actors}{Professor, Student, DB}
+    \addrow{Actors}{Professor, Student, Online Grading System}
     \addrow{Precondition}{Professor has access to the system. Student has access to the system}
     \addrow{Postcondition}{Professor views maximum grade. Student views maximum grade.}
     \addmulrow{Main scenario (M)}{
         \item Professor or Student logins to the system
-        \item System through statistical data module connects to the DB
+        \item System through statistical data module connects to the Online Grading System
         \item System shows the list of available courses for the user (Professor or Student)
         \item Professor or Student chooses the desirable course
         \item System shows the maximum grade for the course
     }
     \adddoublerow{Extensions (E)}{
         \item[] 1.1. Professor or Student entered the wrong credentials
-        \item[] 1.2. Go to 1
-    }
-\end{usecase}
-\newpage
-\begin{usecase}{View personal grade for the course}
-    \addrow{Actors}{Student, DB}
-    \addrow{Precondition}{Student has access to the system}
-    \addrow{Postcondition}{Student views their grade.}
-    \addmulrow{Main scenario (M)}{
-        \item Student logins to the system
-        \item System through statistical data module connects to the DB
-        \item System shows the list of available courses for the Student
-        \item Student chooses the desirable course
-        \item System shows the Student's grade for the course
-    }
-    \adddoublerow{Extensions (E)}{
-        \item[] 1.1. Student entered the wrong credentials
         \item[] 1.2. Go to 1
     }
 \end{usecase}
@@ -420,12 +265,12 @@ A2                  & Average actor        & 2               \\ \hline
 A3                  & Complex actor        & 3               \\ \hline
 \end{tabular}
 \end{table}
-Based on the \textbf{UCM} we have 3 complex actors and 1 simple, then:
+Based on the \textbf{UCM} we have 2 complex actors and 1 simple, then:
 \begin{equation}
-    \textbf{UAW} = 1\times3 + 1\times3 + 1\times3 + 1\times1
+    \textbf{UAW} = 1\times3 + 1\times3 + 1\times1
 \end{equation}
 \begin{equation}
-    \textbf{UAW} = 9
+    \textbf{UAW} = 7
 \end{equation}\\
 
 the \textbf{UUCW} is based on the total number of steps contained in all the use case scenarios.
@@ -443,20 +288,20 @@ UC2                    & Average Use Case     & 10              \\ \hline
 UC3                    & Complex Use Case     & 15              \\ \hline
 \end{tabular}
 \end{table}
-Based on the \textbf{UCM} we have complex use cases, average use cases and simple usecases, then:
+Based on the \textbf{UCM} we have 6 simple use cases, then:
 \begin{equation}
-    \textbf{UUCW} = 15 \times 5
+    \textbf{UUCW} = 6 \times 5
 \end{equation}
 \begin{equation}
-    \textbf{UUCW} = 75
+    \textbf{UUCW} = 30
 \end{equation}\\
 
 In this case the \textbf{UUCP} is:
 \begin{equation}
-    \textbf{UUCP} = 9 + 75
+    \textbf{UUCP} = 7 + 30
 \end{equation}
 \begin{equation}
-    \textbf{UUCP} = 84
+    \textbf{UUCP} = 37
 \end{equation}\\
 
 The purpose of \textbf{TCF} (Technical complexity factor) is to account for the technical concerns that can impact the software project from its inception to its conclusion, including delivery.
@@ -527,10 +372,10 @@ In this case the \textbf{ECF} is:
 
 The \textbf{UCP} is equal:
 \begin{equation}
-    \textbf{UCP} = 84 \times 1.005 \times 0.755
+    \textbf{UCP} = 37 \times 1.005 \times 0.755
 \end{equation}
 \begin{equation}
-    \textbf{UCP} = 63.737
+    \textbf{UCP} = 28.075
 \end{equation}\\
 
 Since the team is new, the \textbf{PF} (Productivity Factor) is equal 20.
@@ -539,13 +384,13 @@ In this case the Effort Estimate is:
     \textbf{Effort Estimate} = \textbf{UCP} \times \textbf{PF}
 \end{equation}
 \begin{equation}
-    \textbf{Effort Estimate} = 63.737 \times 20
+    \textbf{Effort Estimate} = 28.075 \times 20
 \end{equation}
 \begin{equation}
-    \textbf{Effort Estimate} = 1274.74 \quad \textrm{person-hours} \quad
+    \textbf{Effort Estimate} = 561.5 \quad \textrm{person-hours} \quad
 \end{equation}\\
 
-Therefore, the estimated effort of the project by using UCP method is \textbf{1275} person-hours.
+Therefore, the estimated effort of the project by using \textbf{UCP} method is \textbf{562} person-hours.
 
 \subsection{COCOMO 81}
 hello world
