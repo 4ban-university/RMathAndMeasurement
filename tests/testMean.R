@@ -1,3 +1,40 @@
-#expect_that(MeanF(c(1)), equals(1))
-#expect_that(MeanF(c(1,2,3,4,5)), equals(3.2))
-#expect_that(MeanF(c(1,1,1)), equals(1))
+context("SOEN6611 tests for Mean function")
+
+test_that("Positive arrays", {
+  expect_that(SoenMean(c(1,2,3,4,5,6)), equals(3.5))
+  expect_that(SoenMean(c(1,2,3,1,1,1)), equals(1.5))
+  expect_that(SoenMean(c(1,1)), equals(1))
+  expect_that(SoenMean(c(1)), equals(1))
+  expect_that(SoenMean(c(5,8,6,7,5,6,9,8,6,5,7,4,7,8,9,6)), equals(6.625))
+  
+  a1 <- c(3,5,3,6,7,6,5,3,2,4,3,4,32)
+  a2 <- c(0,0,0,0)
+  a3 <- c(0)
+  a4 <- c(1,0,0,0,0)
+  a5 <- c(1,3)
+  expect_that(SoenMean(a1), equals(mean(a1)))
+  expect_that(SoenMean(a2), equals(mean(a2)))
+  expect_that(SoenMean(a3), equals(mean(a3)))
+  expect_that(SoenMean(a4), equals(mean(a4)))
+  expect_that(SoenMean(a5), equals(mean(a5)))
+})
+
+test_that("Negative arrays", {
+  a1 <- c(-3,-5,-3,6,-7,6,5,3,-2,4,3,-4,32)
+  a2 <- c(-0,-0,-0,-0)
+  a3 <- c(-0)
+  a4 <- c(-1,-0,-0,-0,-0)
+  a5 <- c(1,-3)
+  a6 <- c(-3,-5,-3,-7,-2,-4,-5,-3)
+  expect_that(SoenMean(a1), equals(mean(a1)))
+  expect_that(SoenMean(a2), equals(mean(a2)))
+  expect_that(SoenMean(a3), equals(mean(a3)))
+  expect_that(SoenMean(a4), equals(mean(a4)))
+  expect_that(SoenMean(a5), equals(mean(a5)))
+  expect_that(SoenMean(a6), equals(mean(a6)))
+})
+
+test_that("Big arrays", {
+  arr <- sample(1:100, 100, replace=TRUE)
+  expect_that(SoenMean(arr), equals(mean(arr)))
+})
