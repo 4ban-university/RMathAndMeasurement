@@ -248,6 +248,7 @@ Use case model represent the interaction between actors and the system and shows
         \item[] 1.2. Go to 1
     }
 \end{usecase}
+\newpage
 %-----------------------------------------------------------------
 \section{Part - Estimates of effort}
 \subsection{UCP}
@@ -268,7 +269,6 @@ The \textbf{UAW} based on the aggregated complexity of all the actors in all the
 \end{equation}\\
 \begin{table}[h]
 \centering
-\caption{The classification of actors and their associated weights in the UCP approach.}
 \begin{tabular}{|l|l|l|}
 \hline
 \textbf{Actor type} & \textbf{Description} & \textbf{Weight} \\ \hline
@@ -276,6 +276,7 @@ A1                  & Simple actor         & 1               \\ \hline
 A2                  & Average actor        & 2               \\ \hline
 A3                  & Complex actor        & 3               \\ \hline
 \end{tabular}
+\caption{The classification of actors and their associated weights in the UCP approach.}
 \end{table}
 Based on the \textbf{UCM} we have 2 complex actors and 1 simple, then:
 \begin{equation}
@@ -291,7 +292,6 @@ the \textbf{UUCW} is based on the total number of steps contained in all the use
 \end{equation}\\
 \begin{table}[h]
 \centering
-\caption{shows that there are 3 types of use cases, each assigned a weight. }
 \begin{tabular}{|l|l|l|}
 \hline
 \textbf{Use Case Type} & \textbf{Description} & \textbf{Weight} \\ \hline
@@ -299,6 +299,7 @@ UC1                    & Simple Use Case      & 5               \\ \hline
 UC2                    & Average Use Case     & 10              \\ \hline
 UC3                    & Complex Use Case     & 15              \\ \hline
 \end{tabular}
+\caption{shows that there are 3 types of use cases, each assigned a weight. }
 \end{table}
 Based on the \textbf{UCM} we have 6 simple use cases, then:
 \begin{equation}
@@ -324,7 +325,6 @@ Where $C1 = 0.6$, $C2 = 0.01$, $W_{Ti}$ is the Technical Complexity Factor Weigh
 
 \begin{table}[h]
 \centering
-\caption{The Technical Complexity Factors in the UCP approach.}
 \begin{tabular}{|l|l|l|l|}
 \hline
 \multicolumn{1}{|c|}{\textbf{TCF Type}} & \multicolumn{1}{c|}{\textbf{Description}} & \multicolumn{1}{c|}{\textbf{Weight}} & \multicolumn{1}{c|}{\textbf{Factor}} \\ \hline
@@ -342,6 +342,7 @@ T11 & Special Security Features & 1 & 0 \\ \hline
 T12 & Provides Direct Access for Third Parties & 1 & 0 \\ \hline
 T13 & Special User Training Facilities are Required & 1 & 0 \\ \hline
 \end{tabular}
+\caption{The Technical Complexity Factors in the UCP approach.}
 \end{table}
 In this case the \textbf{TCF} is:
 \begin{equation}
@@ -359,7 +360,6 @@ Where $C1 = 1.4$, $C2 = - 0.03$, $W_{Ei}$ is the Environmental Complexity Factor
 
 \begin{table}[h]
 \centering
-\caption{The Environmental Complexity Factors in the UCP approach.}
 \begin{tabular}{|l|l|l|l|}
 \hline
 \multicolumn{1}{|c|}{\textbf{ECF Type}} & \multicolumn{1}{c|}{\textbf{Description}} & \multicolumn{1}{c|}{\textbf{Weight}} & \multicolumn{1}{c|}{\textbf{Factor}} \\ \hline
@@ -372,6 +372,7 @@ E6 & Motivation & 1 & 5 \\ \hline
 E7 & Difficult Programming Language & -1 & 5 \\ \hline
 E8 & Stable Requirements & 2 & 5 \\ \hline
 \end{tabular}
+\caption{The Environmental Complexity Factors in the UCP approach.}
 \end{table}
 
 In this case the \textbf{ECF} is:
@@ -413,8 +414,13 @@ hello world
 \section{Part - Implementation}
 \subsection{Code listings}
 The code listing of implemented functions.
-
+\subsubsection{Init file}
+The file which able to call all the implemented functions.
+\begin{lstlisting}[language=R]
+SoenMin <- function(array){
+\end{lstlisting}
 \subsubsection{Min function}
+Returns the minimum value of an array.
 \begin{lstlisting}[language=R]
 SoenMin <- function(array){
   m <- 9999999999999999
@@ -427,6 +433,7 @@ SoenMin <- function(array){
 }
 \end{lstlisting}
 \subsubsection{Max function}
+Returns the maximum value of an array.
 \begin{lstlisting}[language=R]
 SoenMax <- function(array){
   M <- -9999999999999999
@@ -439,6 +446,7 @@ SoenMax <- function(array){
 }
 \end{lstlisting}
 \subsubsection{Mode function}
+Returns the most frequent value or values of an array.
 \begin{lstlisting}[language=R]
 source("stdlib.R")
 
@@ -478,8 +486,33 @@ SoenMode <- function(array){
   return(o)
 }
 \end{lstlisting}
+\subsubsection{Median function}
+Returns the middle value of an odd array or average (mean) value of an even array.
+\begin{lstlisting}[language=R]
+SoenMax <- function(array){
+\end{lstlisting}
+\subsubsection{Arithmetical Mean function}
+Returns the average value of an array.
+\begin{lstlisting}[language=R]
+SoenMax <- function(array){
+\end{lstlisting}
+\subsubsection{Deviation function}
+Returns the deviation value of an array.
+\begin{lstlisting}[language=R]
+SoenMax <- function(array){
+\end{lstlisting}
+\subsubsection{Library with standart functions}
+The file with implemented standart functions.
+\begin{lstlisting}[language=R]
+SoenMax <- function(array){
+\end{lstlisting}
 \subsection{Testing}
-
+The code for testing. It's necessary to install package "testthat" before start the unit tests.
+\subsubsection{Test initiator}
+The main test file for starting all the tests
+\begin{lstlisting}[language=R]
+SoenMax <- function(array){
+\end{lstlisting}
 %-----------------------------------------------------------------
 \section{Part - Cyclomatic complexity}
 
