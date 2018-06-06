@@ -5,6 +5,7 @@ test_that("Positive arrays", {
   expect_that(SoenMean(c(1,2,3,1,1,1)), equals(1.5))
   expect_that(SoenMean(c(1,1)), equals(1))
   expect_that(SoenMean(c(1)), equals(1))
+  expect_that(SoenMean(c(6)), equals(6))
   expect_that(SoenMean(c(5,8,6,7,5,6,9,8,6,5,7,4,7,8,9,6)), equals(6.625))
   
   a1 <- c(3,5,3,6,7,6,5,3,2,4,3,4,32)
