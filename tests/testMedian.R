@@ -55,9 +55,9 @@ test_that("Negative arrays odd", {
 })
 
 test_that("Big arrays", {
-  arr <- sample(1:100, 100, replace=TRUE)
+  arr <- sample(0:100, 100, replace=TRUE)
   expect_that(SoenMedian(arr), equals(median(arr)))
   
-  arr2 <- sample(1:4000, 1000, replace=TRUE)
+  arr2 <- sample(0:4000, 1000, replace=TRUE)
   expect_that(SoenMedian(arr2), equals(median(arr2)))
 })

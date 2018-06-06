@@ -25,6 +25,6 @@ test_that("Negative arrays", {
 })
 
 test_that("Big arrays", {
-  arr <- sample(1:100, 100, replace=TRUE)
+  arr <- sample(0:100, 100, replace=TRUE)
   expect_that(SoenMax(arr), equals(max(arr)))
 })
