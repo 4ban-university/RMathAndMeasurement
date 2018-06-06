@@ -1,5 +1,10 @@
-# Library with implementation of standart functions
-# Author: Dmitry Kryukov
+#' Library with implementation of standart functions
+#' @author Dmitry Kryukov
+#' @param SoenLen() The length of array function
+#' @param SoenSqrtA() The sqrt function, version 1, high accuracy
+#' @param SoenSqrtB() The sqrt function, version 2, low accuracy
+#' @param SoenSort() The quick sort algorithm implementation function.
+#' @return number, array
 
 # Return len of an array
 SoenLen <- function(array){

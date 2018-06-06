@@ -1,5 +1,7 @@
-# Function mode returns the most frequent element of array
-# Author: Dmitry Kryukov
+#' Function mode returns the most frequent element of array
+#' @author Dmitry Kryukov
+#' @param array The data we are work with
+#' @return array
 
 source("stdlib.R")
 
@@ -9,7 +11,7 @@ SoenMode <- function(array){
     return("Empty array")
   }
   if (l == 1) {
-    return(array)
+    return(array[l])
   }
   array <- SoenSort(array)
   max.counter <- 1
@@ -38,6 +40,3 @@ SoenMode <- function(array){
   }
   return(o)
 }
-
-array <- c(1,2,3,4)
-SoenMode(array)

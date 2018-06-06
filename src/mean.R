@@ -1,5 +1,7 @@
-# Function mean return the average of an array
-# Author: Dmitry Kryukov
+#' Function return the arithmetical mean (average) number of an array
+#' @author Dmitry Kryukov
+#' @param array The data we are work with
+#' @return number
 
 source("stdlib.R")
 
@@ -8,6 +10,9 @@ SoenMean <- function(array){
   mu <- 0
   if (l == 0) {
     return("Empty array")
+  }
+  if (l == 1) {
+    return(array[l])
   }
   for (elem in array) {
     mu <- mu+elem
