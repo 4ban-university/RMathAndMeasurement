@@ -17,7 +17,7 @@ SoenMedian <- function(array){
   }
   array <- SoenSort(array)
   if (l%%2 == 0){
-    d <- mean(c(array[l/2],array[l/2+1]))
+    d <- SoenMean(c(array[l/2],array[l/2+1]))
   } else {
     d <- array[l/2+0.5]
   }
