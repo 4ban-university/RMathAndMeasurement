@@ -7,6 +7,8 @@
 \usepackage{color}
 \usepackage{indentfirst}
 \usepackage{multirow}
+\usepackage{url}
+\usepackage{setspace}
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -38,11 +40,10 @@
 \usepackage[left=2cm,right=2cm,
     top=2cm,bottom=2cm,bindingoffset=0cm]{geometry}
 
-\title{SOEN 6611 \\ SOFTWARE MEASUREMENT \\ Deliverable 1 \\
-(DESCRIPTIVE-STATISTICS)}
+\title{DESCRIPTIVE-STATISTICS}
 \date{SUMMER 2018}     
  % Alphabetical order
-\author{(Team F)\\
+\author{
 Amandeep Kaur Khosa\\
 Dmitry Kryukov\\
 Kritika Kritika\\
@@ -79,8 +80,45 @@ Sukhmeet Kaur
 {\hline\end{tabular}\end{table}}
 % start of the document
 \begin{document}            
-\maketitle               
+%\maketitle               
+%\begin{center}
+%\begin{tabular}{l r}
+%Instructor: & Professor PANKAJ KAMTHAN
+%\end{tabular}
+%\end{center}
+%-----------------------------------------------------------------
+\begin{titlepage}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} 
+\includegraphics[width=8cm]{clogo.jpeg}\\[1cm]
+\center
+\textsc{\huge Team F}\\[1.0cm]
+\textsc{\LARGE Deliverable 1}\\[0.5cm]
+\textsc{\Large SOEN 6611 Software Measurement}\\[0.5cm]
+\textsc{\large Department of Software Engineering and Computer Science, Concordia University}\\[0.5cm]
+\makeatletter
 
+\HRule \\[1.0cm]
+{ \huge \bfseries \@title}\\[0.5cm]
+\HRule \\[1.5cm]
+
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Authors:}\\
+\@author % Your name
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Instructor:} \\
+Prof. PANKAJ KAMTHAN \\[1.2em] % Supervisor's Name
+\end{flushright}
+\end{minipage}\\[2cm]
+\makeatother
+{\large SUMMER 2018}\\[2cm] 
+\vfill
+\end{titlepage}
+%-----------------------------------------------------------------
 \newpage
 \tableofcontents
 %-----------------------------------------------------------------
@@ -397,7 +435,7 @@ The \textbf{UCP} is equal:
     \textbf{UCP} = 28.075
 \end{equation}\\
 
-Since the team is new, the \textbf{PF} (Productivity Factor) is equal 20.
+Since the team is new, the \textbf{PF} (Productivity Factor) is equal \textbf{20}.
 In this case the Effort Estimate is:
 \begin{equation}
     \textbf{Effort Estimate} = \textbf{UCP} \times \textbf{PF}
@@ -409,7 +447,7 @@ In this case the Effort Estimate is:
     \textbf{Effort Estimate} = 561.5 \quad \textrm{person-hours} \quad
 \end{equation}\\
 
-Therefore, the estimated effort of the project by using \textbf{UCP} method is \textbf{562} person-hours.
+Therefore, the \textbf{estimated effort} of the project by using \textbf{UCP} method is \textbf{562} person-hours.
 
 \subsection{COCOMO 81}
 The COCOMO (Constructive Cost Model) approach is a cost model. Based on empirical data it provides the effort estimation or duration of project.
@@ -464,7 +502,7 @@ Based on implemented module the project is Organic with a small team. So the \te
 \subsection{Difference in estimates using UCP and COCOMO 81}
 The effort estimation by \textbf{UCP (E) = 562} person-hours, by \textbf{COCOMO (E) = 0.527} person-month or \textbf{COCOMO (E) = 92.7} person-hours by taking a working hours per month 176 hours (22 days, 8 hours per day).
 
-Based on the actual time spent by the team on the project, the \textbf{COCOMO} estimation most accurate and close to reality. Difference in estimation by using \textbf{UCP} and \textbf{COCOMO} more than 469 person-hours.
+Based on the actual time spent by the team on the project, the \textbf{COCOMO} estimation most \textbf{accurate} and close to reality. Difference in estimation by using \textbf{UCP} and \textbf{COCOMO} more than 469 person-hours.
 %-----------------------------------------------------------------
 \newpage
 \section{Part - Implementation}
@@ -481,7 +519,7 @@ source("median.R")
 source("mean.R")
 source("deviation.R")
 
-array <- c(8,2,2)
+array <- sample(0:100, 100, replace=TRUE)
 print(paste0("Min: ", SoenMin(array)))
 print(paste0("Max: ", SoenMax(array)))
 print(paste0("Mode: ", SoenMode(array)))
@@ -1044,7 +1082,7 @@ deviation.R & SoenDeviation() & 4 \\ \hline
 \begin{equation}
     \textbf{WMC} =\sum^{n}_{i=1}{c_{i}(M_{i})}  
 \end{equation}
-Where C a class with methods M1 to Mn. Let c1(M1), to cn(Mn) be the complexity (weights) of the methods
+Where C a class with methods M1 to Mn. Let c1(M1), to cn(Mn) be the complexity (weights) of the methods \cite{OOD}
 \begin{equation}
     \textbf{WMC} = 1+5+5+9+4+4+4+2+5+4+2 = 45  
 \end{equation}
@@ -1089,16 +1127,74 @@ The Lack of Cohesion in methods (LCOM).
     LCOM_{deviation} = \frac{\frac{1}{1}\times1-1}{1-1} = \frac{0}{0} = 0
 \end{equation}
 
-For six classes LCOM is 0 and that means that these classes have maximum cohesion. Class stdlib has LCOM = 2/3 and that means that cohesion in this class is not high, but not too low.
+For six classes LCOM is 0 and that means that these classes have maximum cohesion. Class stdlib has LCOM = $\frac{2}{3}$ and that means that cohesion in this class is not high, but not too low.
 %-----------------------------------------------------------------
 \section{Part - SLOC}
 The most common definition of physical SLOC is a count of lines of source code excluding comment lines.
-So, manually our \textbf{Physical SLOC = 258}. The Logical SLOC is number of executable "statements", such as if, for, while, <- and other expressions that may affect on the execution, excluding the comments and useless lines such closing bracket. So, manually our \textbf{Logical SLOC = 231}.\\
+So, manually our \textbf{Physical SLOC = 265}. The Logical SLOC is number of executable "statements", such as if, for, while, <- and other expressions that may affect on the execution, excluding the comments and useless lines such closing bracket. So, manually our \textbf{Logical SLOC = 234}.\\
 
 \textbf{Physycal SLOC = 265} and \textbf{Logical SLOC = 236} according to the GitHub code editor as a tool for calculating the SLOC.
 %-----------------------------------------------------------------
 \section{Part - Correlations}
+\subsection{Scatter plot}
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Class}} & \multicolumn{1}{c|}{\textbf{WMC}} & \textbf{Logical SLOC} \\ \hline
+init & 1 & 25 \\ \hline
+min & 5 & 21 \\ \hline
+max & 5 & 21 \\ \hline
+mode & 9 & 39 \\ \hline
+median & 4 & 23 \\ \hline
+mean & 4 & 20 \\ \hline
+deviation & 4 & 23 \\ \hline
+stdlib & 13 & 64 \\ \hline
+\end{tabular}
+\caption{WMC and LSLOC for each class.}
+\end{table}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{Rplot.png}
+\caption{Scatter Plot}
+\end{figure}
+
+\subsection{Correlation coefficient}
+Since the attributes are no distributed normally we can apply the Spearman's Rank Correlation Coefficient $r_{s}$.\cite{Correlation}
+\begin{equation}
+    r_{s} = 1-\frac{6\times\sum^{n}_{i=1}{d_{i}^2}}{n^3-n}  
+\end{equation}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\textbf{Class}} & \multicolumn{1}{c|}{\textbf{WMC$(x_{i})$}} & \textbf{Rank$(x_{i})$} & \textbf{Logical SLOC$(y_{i})$} & \textbf{Rank$(y_{i})$} & \textbf{d} & \textbf{$d^2$}\\ \hline
+init      & 1  & 1   & 25 & 6   & -5 & 25\\ \hline
+min       & 5  & 5.5 & 21 & 2.5 & 3.5 & 12.25\\ \hline
+max       & 5  & 5.5 & 21 & 2.5 & 3.5 & 12.25\\ \hline
+mode      & 9  & 7   & 39 & 7   & 0 & 0\\ \hline
+median    & 4  & 3   & 23 & 4.5 & -1.5 & 2.25\\ \hline
+mean      & 4  & 3   & 20 & 1   & 2 & 4\\ \hline
+deviation & 4  & 3   & 23 & 4.5 &  -1.5 & 2.25\\ \hline
+stdlib    & 13 & 8   & 64 & 8   &  0 & 0\\ \hline
+\end{tabular}
+\caption{Data for Spearman's correlation coefficient}
+\end{table}
+
+\begin{equation}
+    r_{s} = 1-\frac{6\times(25+12.25+12.25+0+2.25+4+2.25+0)}{8^3-8}  
+\end{equation}
+\begin{equation}
+    r_{s} = 1-\frac{348}{504}  
+\end{equation}\\
+\begin{equation}
+    r_{s} = 0.31  
+\end{equation}
+We have a positive correlation between WMC and Logilal SLOC for classes.
 %-----------------------------------------------------------------
+\newpage
 \section{Part - Glossary}
 \begin{table}[h]
 \centering
@@ -1120,6 +1216,7 @@ WMC & Weighted Method per Classes \\ \hline
 CF & Coupling Factor \\ \hline
 LCOM & Lack of Cohesion in Methods \\ \hline
 SLOC & Source Line Of Code \\ \hline
+$r_{s}$ & Spearman Rank Correlation Coefficient \\ \hline
 \end{tabular}
 \caption{Glossary}
 \end{table}
