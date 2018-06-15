@@ -1,28 +1,22 @@
 # SOEN 6611 Software Measurement 
-## group F.
-* Amandeep Kaur Khosa
-* Dmitry Kryukov
-* Kritika Kritika
-* Mehak Jot Kaur
-* Roopamdeep Kaur
-* Sukhmeet Kaur
+
 ## Implementation
 Functions: 
-* SoenMin() return the min value of an array
-* SoenMax() - return the max value of an array
-* SoenMode() - return the array of most frequent values in the array
-* SoenMedian() - return the median (middle number) for odd array and average of two middle numbers dor even array
-* SoenMean() - return the average value of an array
-* SoenDeviation() - return the deviation of an array
+* `SoenMin(array)` return the min value of an array
+* `SoenMax(array)` - return the max value of an array
+* `SoenMode(array)` - return the array of most frequent values in the array
+* `SoenMedian(array)` - return the median (middle number) for odd array and arithmetic mean of the two middle numbers if array is even
+* `SoenMean(array)` - return the arithmetic mean (average) value of an array
+* `SoenDeviation(array)` - return the deviation of an array
 
 Additional functions: 
-* SoenLen() - return the length of an array
-* SoenSqrtA() - return the square root on the number (more accurate)
-* SoenSqrtB() - return the square root of the number
-* SoenSort() - return the sorted array by using quick sort algorithm
+* `SoenLen(array)` - return the length of an array
+* `SoenSqrtA(number)` - return the square root on the number (more accurate)
+* `SoenSqrtB(number)` - return the square root of the number
+* `SoenSort(array)` - return the sorted array by using quick sort algorithm
 
 ## Installation
-Before start unit tests you have to install the *testthat* package via RStudio.
+Before start unit tests you have to install the *testthat* package via RStudio manu or via R console `install.packages("testthat")`.
 
 ## Run
 For running the project, you have to start the *init.R* script from src folder by any IDE or via console.
