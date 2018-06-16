@@ -55,7 +55,7 @@ Sukhmeet Kaur
 \newcommand\tabularhead[1]{
 \begin{table}[h]
   \caption{Use case - #1}
-  \begin{tabular}{|p{0.35\linewidth}|p{0.65\linewidth}|}
+  \begin{tabular}{|p{0.3\linewidth}|p{0.7\linewidth}|}
     \hline
     \textbf{Use case name} & \textbf{#1} \\
     \hline}
@@ -94,7 +94,7 @@ Sukhmeet Kaur
 \textsc{\huge Team F}\\[1.0cm]
 \textsc{\LARGE Deliverable 1}\\[0.5cm]
 \textsc{\Large SOEN 6611 Software Measurement}\\[0.5cm]
-\textsc{\large Department of Software Engineering and Computer Science, Concordia University}\\[0.5cm]
+\textsc{\large Department of Software Engineering and Computer Science Concordia University}\\[0.5cm]
 \makeatletter
 
 \HRule \\[1.0cm]
@@ -123,63 +123,63 @@ Prof. PANKAJ KAMTHAN \\[1.2em] % Supervisor's Name
 \tableofcontents
 %-----------------------------------------------------------------
 \section{Introduction}
-The purpose of the descriptive-statistics is engaged with the processing of empirical data, quantitatively describe a sets of information and systematization of the data. 
+The purpose of the descriptive-statistics is engaged with the processing of empirical data, quantitative description of the set of information and data systematization.\\
 
-The considered project is a module which should integrate to the Online Grading System and help to improve users experience by using descriptive-statistics features. For that project were implemented from scratch a several functions: Minimum, Maximum, Mode, Median, Arithmetic Mean and Standard Deviation. According to the requirements, no built-in functions were used. The new functions were written from scratch and the whole project was written by using the R language.
+The considered project is a module which can be integrated into the Online Grading System and help to improve users experience by using descriptive-statistics features. For this project the following functions were implemented from scratch: Minimum, Maximum, Mode, Median, Arithmetic Mean, and Standard Deviation. According to the requirements, no built-in functions were used. The new functions were written from scratch, and the whole project was written using the R language.\\
 
-During development cycle the quality attributes such as efficiency, readability,  maintainability, understandability and usability were taken into account and described in code as correct as possible.
+During the development cycle, the quality attributes such as efficiency, readability,  maintainability, understandability, and usability were taken into account.\\
 
-In the project GQM approach is used to achieve the goal of the project.\cite{GQM-approach} \cite{GQM} \cite{GQM-wiki} \cite{GQM-eduardo} \cite{GQM-book} \cite{GQM-book2} \cite{GQM-Bjorn}
+In the project GQM approach is used to achieve the goal of the project.\cite{GQM-approach}  \cite{GQM-book} \cite{GQM-book2} \cite{GQM-Bjorn}
 
 %-----------------------------------------------------------------
-\section{Part - GQM}      
+\section{GQM}      
 \subsection{Goal}
-Create a module to \textbf{improve} the \textbf{efficiency} of studying process from the point of view of \textbf{students and professors} in the context of \textbf{online grading system}. \par 
-The descriptive-statistics in the module shall provide more efficient and accurate data based on new minimum, maximum, mode, median, mean and deviation functions for assigning the grades.
+Create a module to \textbf{improve} the \textbf{efficiency} of studying process from the point of view of \textbf{students and professors} in the context of \textbf{Online Grading System}. \\ \par 
+The descriptive-statistics in the module shall provide more efficient and accurate data based on new minimum, maximum, mode, median, mean and standard deviation functions for assigning the grades.
 
 \subsection{Questions}
 
 \begin{itemize}
-    \item \textbf{Q1}: How many lines of code are the files on average?\\
+    \item \textbf{Q1}: How many lines of code on average do the files contain?\\
      M1: Number of files.\\
      M2: Number of lines of code (SLOC) in the files.\\
      M3: Average number of lines of code in the files. 
-    \item \textbf{Q2}: How to ensure that the descriptive-statistics functions return results in less than 2 sec? \\
-     M4: Time-based unit tests
-    \item \textbf{Q3}: How to ensure that the all users satisfied with the module?\\
-     M5: Student survey
+    \item \textbf{Q2}: How to ensure that the descriptive-statistics functions return results in less than 2 seconds? \\
+     M4: Time-based unit tests.
+    \item \textbf{Q3}: How to ensure that all users satisfied with the module?\\
+     M5: Student survey.
     \item \textbf{Q4}: What is the defect/failures density?\\
-     M6: Number of failures reported by users per month\\
+     M6: Number of failures reported by users per month.\\
      M2: Number of lines of code (SLOC) in the files.\\
      M7: Number of failures per KLOC.
     \item \textbf{Q5}: How to ensure that the code is maintainable?\\
      M8: Test coverage.
     \item \textbf{Q6}: How to ensure that the code is easy to read for other developers?\\
-     M9: The code corresponds to the convention (code stardard)
-    \item \textbf{Q7}: How many functions covered by documentation?\\
-     M10: Number of functions\\
-     M11: Number of comments\\
-     M12: The ratio of the number of comments to the SLOC
-    \item \textbf{Q8}: How many the unit tests are performed?\\
+     M9: The code corresponds to the convention (code standard).
+    \item \textbf{Q7}: How many functions are covered by the documentation?\\
+     M10: Number of functions.\\
+     M11: Number of comments.\\
+     M12: The ratio of the number of comments to the SLOC.
+    \item \textbf{Q8}: How many unit tests are performed?\\
      M13: The ratio of performed unit tests to the number of unit tests.
-    \item \textbf{Q9}: How to ensure that the descriptive-statistics functions return the correct results?\\
+    \item \textbf{Q9}: How to ensure that the descriptive-statistics functions return the correct result?\\
      M8: Test coverage.\\
-     M14: Number of unit tests 
-    \item \textbf{Q10}: What are the bottlenecks of increasing effectiveness of the system?\\
-     M15: Action runtime
+     M14: Number of unit tests.
+    \item \textbf{Q10}: What are the bottlenecks of the increasing effectiveness of the system?\\
+     M15: Action runtime.
     \item \textbf{Q11}: How to ensure that the module development is profitable?\\
-     M16: Effort estimation\\
-     M17: Cost estimation\\
-     M18: Duration estimation
-    \item \textbf{Q12}: How the developers are effective at finding failures?\\
-     M14: Number of unit tests\\
-     M6: Number of failures reported by users per month\\
+     M16: Effort estimation.\\
+     M17: Cost estimation.\\
+     M18: Duration estimation.
+    \item \textbf{Q12}: How effective are developers at finding failures?\\
+     M14: Number of unit tests.\\
+     M6: Number of failures reported by users per month.\\
      M13: The ratio of performed unit tests to the number of unit tests. 
 \end{itemize}
 \newpage
 %-----------------------------------------------------------------
-\section{Part - Use case model}
-Use case model represent the interaction between actors and the system and shows the relationships between the actors and different use cases.\cite{UCM}
+\section{Use case model}
+Use case model represents the interaction between the actors and the system and shows the relationships between the actors and different use cases.\cite{UCM}
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{UCMv2.png}
@@ -188,129 +188,124 @@ Use case model represent the interaction between actors and the system and shows
 \newpage
 \subsection{Use cases}
 
-\begin{usecase}{View the most frequent (Mode) for the course}
-    \addrow{Actors}{Professor, Online Grading System}
-    \addrow{Precondition}{Professor has access to the system}
-    \addrow{Postcondition}{Professor views the mode}
+\begin{usecase}{View the most frequent (Mode) grade for the course}
+    \addrow{Actors}{Professor, Online Grading System (OGS).}
+    \addrow{Precondition}{Professor has access to the system.}
+    \addrow{Postcondition}{Professor can see the mode.}
     \addmulrow{Main scenario (M)}{
-        \item Professor logins to the system
-        \item System through statistical data module connects to the Online Grading System
-        \item System shows the list of available courses
-        \item Professor chooses the course to view
-        \item System shows the statistics of the course
-        \item Professor views the mode of course
+        \item Professor logins to the system.
+        \item The system shows the list of available courses.
+        \item Professor chooses the course to view.
+        \item The system shows the statistics of the course.
+        \item Professor views the mode of the course.\\
     }
     \adddoublerow{Extensions (E)}{
-        \item[] 1.1. Professor entered the wrong credentials
-        \item[] 1.2. Go to 1
+        \item[] 1.1. Professor entered the wrong credentials.
+        \item[] 1.2. Go to 1.\\
     }
 \end{usecase}
 
-\begin{usecase}{View the deviation for the course}
-    \addrow{Actors}{Professor, Online Grading System}
-    \addrow{Precondition}{Professor has access to the system}
-    \addrow{Postcondition}{Professor views the deviation}
+\begin{usecase}{View the standard deviation for the course}
+    \addrow{Actors}{Professor, Online Grading System (OGS).}
+    \addrow{Precondition}{Professor has access to the system.}
+    \addrow{Postcondition}{Professor views the deviation.}
     \addmulrow{Main scenario (M)}{
-        \item Professor logins to the system
-        \item System through statistical data module connects to the Online Grading System
-        \item System shows the list of available courses
-        \item Professor chooses the course to view
-        \item System shows the statistics of the course
-        \item Professor views the deviation for the course
+        \item Professor logins to the system.
+        \item The system shows the list of available courses.
+        \item Professor chooses the course to view.
+        \item The system shows the course statistics.
+        \item Professor views the standard deviation for the course.\\
     }
     \adddoublerow{Extensions (E)}{
-        \item[] 1.1. Professor entered the wrong credentials
-        \item[] 1.2. Go to 1
+        \item[] 1.1. Professor entered the wrong credentials.
+        \item[] 1.2. Go to 1.\\
     }
 \end{usecase}
 \newpage
 \begin{usecase}{View the median for the course}
-    \addrow{Actors}{Professor, Online Grading System}
-    \addrow{Precondition}{Professor has access to the system}
-    \addrow{Postcondition}{Professor views the median}
+    \addrow{Actors}{Professor, Online Grading System (OGS).}
+    \addrow{Precondition}{Professor has access to the system.}
+    \addrow{Postcondition}{Professor views the median.}
     \addmulrow{Main scenario (M)}{
-        \item Professor logins to the system
-        \item System through statistical data module connects to the Online Grading System
-        \item System shows the list of available courses
-        \item Professor chooses the course to view
-        \item System shows the statistics of the course
-        \item Professor views the median
+        \item Professor logins to the system.
+        \item The system shows the list of available courses.
+        \item Professor chooses the course to view.
+        \item The system shows the course statistics.
+        \item Professor views the median.\\
     }
     \adddoublerow{Extensions (E)}{
-        \item[] 1.1. Professor entered the wrong credentials
-        \item[] 1.2. Go to 1
+        \item[] 1.1. Professor entered the wrong credentials.
+        \item[] 1.2. Go to 1.\\
     }
 \end{usecase}
 
-\begin{usecase}{View average (Mean) for the course}
-    \addrow{Actors}{Professor, Student, Online Grading System}
-    \addrow{Precondition}{Professor has access to the system. Student has access to the system}
+\begin{usecase}{View the average (Mean) grade for the course}
+    \addrow{Actors}{Professor, Student, Online Grading System (OGS).}
+    \addrow{Precondition}{Professor has access to the system. Student has access to the system.}
     \addrow{Postcondition}{Professor views average (Mean). Student views average (Mean).}
     \addmulrow{Main scenario (M)}{
-        \item Professor or Student logins to the system
-        \item System through statistical data module connects to the Online Grading System
-        \item System shows the list of available courses for the user (Professor or Student)
-        \item Professor or Student chooses the desirable course
-        \item System shows the average (Mean) for the course
+        \item Professor or Student logins to the system.
+        \item The system shows the list of available courses for the user (Professor or Student).
+        \item Professor or Student chooses the desirable course.
+        \item The system shows the average (Mean) grade for the course.\\
     }
     \adddoublerow{Extensions (E)}{
         \item[] 1.1. Professor or Student entered the wrong credentials
-        \item[] 1.2. Go to 1
+        \item[] 1.2. Go to 1\\
     }
 \end{usecase}
 \newpage
-\begin{usecase}{View minimum for the course}
-    \addrow{Actors}{Professor, Student, Online Grading System}
-    \addrow{Precondition}{Professor has access to the system. Student has access to the system}
+\begin{usecase}{View the minimum grade for the course}
+    \addrow{Actors}{Professor, Student, Online Grading System (OGS).}
+    \addrow{Precondition}{Professor has access to the system. Student has access to the system.}
     \addrow{Postcondition}{Professor views minimum.  Student views minimum.}
     \addmulrow{Main scenario (M)}{
-        \item Professor or Student logins to the system
-        \item System through statistical data module connects to the Online Grading System
-        \item System shows the list of available courses for the user (Professor or Student)
-        \item Professor or Student chooses the desirable course
-        \item System shows the minimum for the course
+        \item Professor or Student logins to the system.
+        \item The system shows the list of available courses for the user (Professor or Student).
+        \item Professor or Student chooses the desirable course.
+        \item The system shows the minimum grade for the course.\\
     }
     \adddoublerow{Extensions (E)}{
         \item[] 1.1. Professor or Student entered the wrong credentials
-        \item[] 1.2. Go to 1
+        \item[] 1.2. Go to 1\\
     }
 \end{usecase}
 
-\begin{usecase}{View maximum for the course}
-    \addrow{Actors}{Professor, Student, Online Grading System}
-    \addrow{Precondition}{Professor has access to the system. Student has access to the system}
+\begin{usecase}{View the maximum grade for the course}
+    \addrow{Actors}{Professor, Student, Online Grading System (OGS).}
+    \addrow{Precondition}{Professor has access to the system. Student has access to the system.}
     \addrow{Postcondition}{Professor views maximum. Student views maximum .}
     \addmulrow{Main scenario (M)}{
-        \item Professor or Student logins to the system
-        \item System through statistical data module connects to the Online Grading System
-        \item System shows the list of available courses for the user (Professor or Student)
-        \item Professor or Student chooses the desirable course
-        \item System shows the maximum for the course
+        \item Professor or Student logins to the system.
+        \item The system shows the list of available courses for the user (Professor or Student).
+        \item Professor or Student chooses the desirable course.
+        \item The system shows the maximum grade for the course.\\
     }
     \adddoublerow{Extensions (E)}{
-        \item[] 1.1. Professor or Student entered the wrong credentials
-        \item[] 1.2. Go to 1
+        \item[] 1.1. Professor or Student entered the wrong credentials.
+        \item[] 1.2. Go to 1.\\
     }
 \end{usecase}
 \newpage
 %-----------------------------------------------------------------
-\section{Part - Estimates of effort}
-\subsection{UCP}
-The \textbf{UCP} is effort estimation approach. To calculate effort there are number of needed equations: \textbf{UUCP} (Unadjusted Use Case Points), \textbf{TCF} (Technical Complexity Factor), \textbf{ECF} (Environment Complexity Factor). \\
+\section{Estimates of effort}
+\subsection{Use Case Points}
+The \textbf{UCP} is the effort estimation approach. To calculate the UCP the following values have to be calculated first: \textbf{UUCP} (Unadjusted Use Case Points), \textbf{TCF} (Technical Complexity Factor), \textbf{ECF} (Environment Complexity Factor). The formula to calculate the \textbf{UCP} is given below:\\
 \begin{equation}
     \textbf{UCP} = \textbf{UUCP} \times \textbf{TCF} \times \textbf{ECF}
-\end{equation}\\
+\end{equation}
 
-The \textbf{UUCP} based on the sum of \textbf{UAW} (Unadjusted Actor Weight)
-and \textbf{UUCW} (Unadjusted Use Case Weight).\\
+The \textbf{UUCP} is calculated as the sum of \textbf{UAW} (Unadjusted Actor Weight)
+and \textbf{UUCW} (Unadjusted Use Case Weight):\\
 \begin{equation}
     \textbf{UUCP} = \textbf{UAW} + \textbf{UUCW}
-\end{equation}\\
+\end{equation}
 
-The \textbf{UAW} based on the aggregated complexity of all the actors in all the use cases.
+The \textbf{UAW} is calculated as the aggregated complexity of all the actors in all the use cases:
 \begin{equation}
     \textbf{UAW} = \sum^{}_{}{Actors * Weight}
-\end{equation}\\
+\end{equation}\par 
+The classification of the actors in the use cases is shown in the table below:
 \begin{table}[h]
 \centering
 \begin{tabular}{|l|l|l|}
@@ -320,20 +315,21 @@ A1                  & Simple actor         & 1               \\ \hline
 A2                  & Average actor        & 2               \\ \hline
 A3                  & Complex actor        & 3               \\ \hline
 \end{tabular}
-\caption{The classification of actors and their associated weights in the UCP approach.}
-\end{table}
-Based on the \textbf{UCM} we have 2 complex actors and 1 simple, then:
+\caption{The classification of the actors and their associated weights in the UCP approach.}
+\end{table} \par
+The system consists of three actors. Professor and student are complex actors, the descriptive-statistics module is a simple actor. Therefore:
 \begin{equation}
     \textbf{UAW} = 1\times3 + 1\times3 + 1\times1
 \end{equation}
 \begin{equation}
     \textbf{UAW} = 7
-\end{equation}\\
+\end{equation}
 
-the \textbf{UUCW} is based on the total number of steps contained in all the use case scenarios.
+The \textbf{UUCW} is calculated as the total number of transactions in each use case.
 \begin{equation}
     \textbf{UUCW} = \sum^{}_{}{UseCase * Weight}
-\end{equation}\\
+\end{equation}
+\par Use case types and the corresponding weights are represented in the table below:
 \begin{table}[h]
 \centering
 \begin{tabular}{|l|l|l|}
@@ -343,9 +339,10 @@ UC1                    & Simple Use Case      & 5               \\ \hline
 UC2                    & Average Use Case     & 10              \\ \hline
 UC3                    & Complex Use Case     & 15              \\ \hline
 \end{tabular}
-\caption{shows that there are 3 types of use cases, each assigned a weight. }
-\end{table}
-Based on the \textbf{UCM} we have 6 simple use cases, then:
+\caption{Use case types and the corresponding weights}
+\end{table}\\ 
+
+\par Based on the \textbf{UCM} there are 6 simple use cases in the system. Therefore:
 \begin{equation}
     \textbf{UUCW} = 6 \times 5
 \end{equation}
@@ -353,7 +350,7 @@ Based on the \textbf{UCM} we have 6 simple use cases, then:
     \textbf{UUCW} = 30
 \end{equation}\\
 
-In this case the \textbf{UUCP} is:
+\par In this case the \textbf{UUCP} is:
 \begin{equation}
     \textbf{UUCP} = 7 + 30
 \end{equation}
@@ -361,7 +358,7 @@ In this case the \textbf{UUCP} is:
     \textbf{UUCP} = 37
 \end{equation}\\
 
-The purpose of \textbf{TCF} (Technical complexity factor) is to account for the technical concerns that can impact the software project from its inception to its conclusion, including delivery.
+The purpose of \textbf{TCF} (Technical complexity factor) is to account the technical concerns that can impact the software project from its inception to its conclusion, including the delivery.
 \begin{equation}
     \textbf{TCF} = C1 + \Bigg[C2 \times \sum^{13}_{i=1}{(W_{Ti} \times F_{i})\Bigg]} 
 \end{equation}\\
@@ -395,8 +392,8 @@ In this case the \textbf{TCF} is:
 \begin{equation}
     \textbf{TCF} =  1.005
 \end{equation}\\
-\newpage
-The purpose of \textbf{ECF} is to account for the development team's personal traits, including experience.
+
+The purpose of \textbf{ECF} is to account the development team's personal traits, including the experience.
 \begin{equation}
     \textbf{ECF} = C1 + \Bigg[C2 \times \sum^{8}_{i=1}{(W_{Ei} \times F_{i})\Bigg]} 
 \end{equation}\\
@@ -427,7 +424,7 @@ In this case the \textbf{ECF} is:
     \textbf{ECF} =  0.755
 \end{equation}\\
 
-The \textbf{UCP} is equal:
+Now the \textbf{UCP} can be calculated:
 \begin{equation}
     \textbf{UCP} = 37 \times 1.005 \times 0.755
 \end{equation}
@@ -436,7 +433,7 @@ The \textbf{UCP} is equal:
 \end{equation}\\
 
 Since the team is new, the \textbf{PF} (Productivity Factor) is equal \textbf{20}.
-In this case the Effort Estimate is:
+Therefore, the Effort Estimate is:
 \begin{equation}
     \textbf{Effort Estimate} = \textbf{UCP} \times \textbf{PF}
 \end{equation}
@@ -447,22 +444,22 @@ In this case the Effort Estimate is:
     \textbf{Effort Estimate} = 561.5 \quad \textrm{person-hours} \quad
 \end{equation}\\
 
-Therefore, the \textbf{estimated effort} of the project by using \textbf{UCP} method is \textbf{562} person-hours.
+Therefore, the \textbf{estimated effort} of the project by using the \textbf{UCP} approach is \textbf{562} person-hours.
 
 \subsection{COCOMO 81}
-The COCOMO (Constructive Cost Model) approach is a cost model. Based on empirical data it provides the effort estimation or duration of project.
+The COCOMO (Constructive Cost Model) approach is a cost model. Based on the empirical data it provides the effort estimation or duration of the project. 
 \begin{equation}
     \textbf{Effort Estimation (E)} = a\times (S)^{b}\times F \quad \textrm{person-month} \quad
 \end{equation}
-Where \textbf{S} is software size in Kilo Delivered Source Instructions (KDSI), the coefficients \textbf{a} and \textbf{b} depend on the type of software project (as shown in Table 11), and \textbf{F} is the adjustment factor. In Basic COCOMO, there is no adjustment, and so \textbf{F = 1}.\\
+Where \textbf{S} is software size in Kilo Delivered Source Instructions (KDSI), the coefficients \textbf{a} and \textbf{b} depend on the type of software project (as shown in Table 11), and \textbf{F} is the adjustment factor. In Basic COCOMO, there is no adjustment, so \textbf{F = 1}.\\
 
-The equation for duration estimation in Basic COCOMO is:
+The equation for the duration estimation in Basic COCOMO is:
 \begin{equation}
     \textbf{Duration Estimation (D)} = c\times (E)^{d} \quad \textrm{time in month} \quad
 \end{equation}
-Where coefficients \textbf{c} and \textbf{d} depends on the type of project (see Table 11).\\
+Where coefficients \textbf{c} and \textbf{d} depend on the type of the project (see Table 11).\\
 
-The equation for cost estimation in Basic COCOMO is: 
+The equation for the cost estimation in Basic COCOMO is: 
 \begin{equation}
     \textbf{Cost Estimation (P)} = E/D \quad \textrm{people required} \quad
 \end{equation}
@@ -476,9 +473,9 @@ Organic & 2.4 & 1.05 & 2.5 & 0.38 \\ \hline
 Semi-detached & 3.0 & 1.12 & 2.5 & 0.35 \\ \hline
 Embedded & 3.6 & 1.20 & 2.5 & 0.32 \\ \hline
 \end{tabular}
-\caption{Types of project.}
+\caption{Types of the project.}
 \end{table}
-Based on implemented module the project is Organic with a small team. So the \textbf{S} = 0.236 KDSI, \textbf{F = 1} and the coefficients \textbf{a} = 2.4, \textbf{b} = 1.05, \textbf{c} = 2.5,\textbf{d} = 0.38.\\ 
+Based on the implemented module the project is Organic with a small team. So the \textbf{S} = 0.236 KDSI, \textbf{F = 1} and the coefficients \textbf{a} = 2.4, \textbf{b} = 1.05, \textbf{c} = 2.5,\textbf{d} = 0.38. Therefore:\\ 
 
 \begin{equation}
     \textbf{Effort Estimation (E)} = 2.4\times (0.236)^{1.05}\times 1 \quad \textrm{person-month} \quad
@@ -499,17 +496,16 @@ Based on implemented module the project is Organic with a small team. So the \te
     \textbf{P} = 0.269 \quad \textrm{people required} \quad
 \end{equation}
 
-\subsection{Difference in estimates using UCP and COCOMO 81}
-The effort estimation by \textbf{UCP (E) = 562} person-hours, by \textbf{COCOMO (E) = 0.527} person-month or \textbf{COCOMO (E) = 92.7} person-hours by taking a working hours per month 176 hours (22 days, 8 hours per day).
-
-Based on the actual time spent by the team on the project, the \textbf{COCOMO} estimation most \textbf{accurate} and close to reality. Difference in estimation by using \textbf{UCP} and \textbf{COCOMO} more than 469 person-hours.
+\subsection{Difference in the estimates using UCP approach and COCOMO}
+The effort estimation by \textbf{UCP (E) = 562} person-hours, by \textbf{COCOMO (E) = 0.527} person-month or \textbf{COCOMO (E) = 92.7} person-hours by taking a working hours per month as 176 hours (22 days, 8 hours per day).\\ \par
+Based on the actual time spent by the team on the project, the \textbf{COCOMO} estimation is more \textbf{accurate} and close to reality. The difference in the estimation by using \textbf{UCP} approach and \textbf{COCOMO} is more than 469 person-hours.
 %-----------------------------------------------------------------
 \newpage
-\section{Part - Implementation}
+\section{Implementation}
 \subsection{Code listings}
-The code listing of implemented functions. The comments are excluded from the listings to save space. 
+In this patt the code listings of the implemented functions are represented. The comments are excluded from the listings to save the space. 
 \subsubsection{Init file}
-The file which able to call all the implemented functions.
+The file that calls all the implemented functions of the descriptive-statistics.
 \begin{lstlisting}[language=R]
 source("stdlib.R")
 source("min.R")
@@ -528,7 +524,7 @@ print(paste0("Mean: ", SoenMean(array)))
 print(paste0("Deviation: ", SoenDeviation(array)))
 \end{lstlisting}
 \subsubsection{Min function}
-Returns the minimum value of an array.
+In the context of the Online Grading System this function returns the lowest grade of the course. This value doesn't need to be unique. This function finds the minimum value in the given array and returns it.
 \begin{lstlisting}[language=R]
 source("stdlib.R")
 
@@ -550,7 +546,7 @@ SoenMin <- function(array){
 }
 \end{lstlisting}
 \subsubsection{Max function}
-Returns the maximum value of an array.
+In the context of the Online Grading System this function returns the highest grade of the course. This value doesn't need to be unique. This function finds the maximum value in the given array and returns it.
 \begin{lstlisting}[language=R]
 source("stdlib.R")
 
@@ -572,7 +568,7 @@ SoenMax <- function(array){
 }
 \end{lstlisting}
 \subsubsection{Mode function}
-Returns the most frequent value or values of an array.
+This function finds the most frequent value or values in the given array. In the context of the Online Grading System this function finds the most frequent grade (or the set of grades) for the course. Mode does not need to be unique. There can be more than one mode. This function works with the sorted array.
 \begin{lstlisting}[language=R]
 source("stdlib.R")
 
@@ -613,7 +609,7 @@ SoenMode <- function(array){
 }
 \end{lstlisting}
 \subsubsection{Median function}
-Returns the middle value of an odd array or average (mean) value of an even array.
+This function returns the middle number of an odd array or the arithmetic mean of the two middle numbers of an even array. This function works with the sorted array and returns the middle grade of the course.
 \begin{lstlisting}[language=R]
 source("stdlib.R")
 source("mean.R")
@@ -636,8 +632,8 @@ SoenMedian <- function(array){
   return(d)
 }
 \end{lstlisting}
-\subsubsection{Arithmetical Mean function}
-Returns the average value of an array.
+\subsubsection{Arithmetic Mean function}
+This function returns the average value of the given array. In the context of the Online Grading System it calculates the average grade of the course.
 \begin{lstlisting}[language=R]
 source("stdlib.R")
 
@@ -657,8 +653,8 @@ SoenMean <- function(array){
   return(mu)
 }
 \end{lstlisting}
-\subsubsection{Deviation function}
-Returns the deviation value of an array.
+\subsubsection{Standard Deviation function}
+This function calculates the standard deviation value for a total population of the given array.
 \begin{lstlisting}[language=R]
 source("stdlib.R")
 source("mean.R")
@@ -682,10 +678,10 @@ SoenDeviation <- function(array){
   return(omega)
 }
 \end{lstlisting}
-\subsubsection{Library with standart functions}
-The file with implemented standart functions.
+\subsubsection{Library with standard functions}
+The class with implemented standard mathematical functions is represented below. It includes the calculation of the array length, square root and the quick sort. All these methods were used in descriptive-statistics functions.
 \begin{lstlisting}[language=R]
-# Return len of an array
+# Return the length of an array
 SoenLen <- function(array){
   count <- 0
   for (elem in array){
@@ -734,7 +730,7 @@ SoenSqrtB <- function(number){
   return(j)
 }
 
-# Return sorted array via quick sort
+# Return the sorted array via quick sort
 SoenSort <- function(array){
   l <- len(array)
   if (l > 1) {
@@ -750,16 +746,16 @@ SoenSort <- function(array){
 \end{lstlisting}
 \newpage
 \subsection{Testing}
-The code for testing. It's necessary to install package "testthat" before start the unit tests.
+In this section the code for testing and testing results are represented. It's necessary to install package \textbf{testthat} before the start of the unit tests.
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{1.png}
-\caption{Results with specified array}
+\caption{Results with the specified array}
 \end{figure}
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.7\textwidth]{2.png}
-\caption{Results with random array}
+\caption{Results with a random array}
 \end{figure}
 \newpage
 \begin{figure}[h]
@@ -774,10 +770,10 @@ library('testthat')
 
 test_dir('../tests')
 \end{lstlisting}
-\subsubsection{Tests for minimum function}
-The set of tests of minimum function.
+\subsubsection{Tests for the Minimum function}
+The set of tests for the minimum function:
 \begin{lstlisting}[language=R]
-context("SOEN6611 tests for Minimum function")
+context("SOEN6611 tests for the Minimum function")
 
 test_that("Positive arrays", {
   expect_that(SoenMin(c(1,2,3,4,5,6)), equals(1))
@@ -805,8 +801,8 @@ test_that("Big arrays", {
 })
 \end{lstlisting}
 
-\subsubsection{Tests for Maximum function}
-The set of tests of maximum function.
+\subsubsection{Tests for the Maximum function}
+The set of tests for the maximum function.
 \begin{lstlisting}[language=R]
 context("SOEN6611 tests for Maximum function")
 
@@ -839,8 +835,8 @@ test_that("Big arrays", {
   expect_that(SoenMax(arr), equals(max(arr)))
 })
 \end{lstlisting}
-\subsubsection{Tests for Mode function.}
-The set of tests of mode function.
+\subsubsection{Tests for the Mode function.}
+The set of tests for the mode function.
 \begin{lstlisting}[language=R]
 context("SOEN6611 tests for Mode function")
 
@@ -865,8 +861,8 @@ test_that("Big arrays", {
   expect_that(SoenMean(arr), is_a('numeric'))
 })
 \end{lstlisting}
-\subsubsection{Tests for Median function.}
-The set of tests of median function.
+\subsubsection{Tests for the Median function.}
+The set of tests for the median function.
 \begin{lstlisting}[language=R]
 context("SOEN6611 tests for Median function")
 
@@ -932,8 +928,8 @@ test_that("Big arrays", {
   expect_that(SoenMedian(arr2), equals(median(arr2)))
 })
 \end{lstlisting}
-\subsubsection{Tests for Mean function.}
-The set of tests of arithmetic mean function.
+\subsubsection{Tests for the Mean function.}
+The set of tests for the arithmetic mean function.
 \begin{lstlisting}[language=R]
 context("SOEN6611 tests for Mean function")
 
@@ -977,8 +973,8 @@ test_that("Big arrays", {
   expect_that(SoenMean(arr), equals(mean(arr)))
 })
 \end{lstlisting}
-\subsubsection{Tests for Deviation function.}
-The set of tests of deviation function.
+\subsubsection{Tests for the Standard Deviation function.}
+The set of tests for the standard deviation function.
 \begin{lstlisting}[language=R]
 context("SOEN6611 tests for Deviation function")
 
@@ -1015,8 +1011,8 @@ test_that("Big arrays", {
 \end{lstlisting}
 
 %-----------------------------------------------------------------
-\section{Part - Cyclomatic complexity}
-Cyclomatic complexity is a software metric used to measure the complexity of a program. These metric, measures independent paths through program source code. Cyclomatic complexity can be calculated with respect to functions, modules, methods or classes within a program.
+\section{Cyclomatic complexity}
+Cyclomatic complexity is a software metric used to measure the complexity of a program. This metric measures independent paths through program source code. Cyclomatic complexity can be calculated with respect to functions, modules, methods or classes within a program.
 \begin{equation}
     \textbf{Complexity of the Program V(G)} = E - N + 2
 \end{equation}
@@ -1024,7 +1020,8 @@ Where, E - Number of edges, N - Number of Nodes in the Flow graph.
 \begin{equation}
     \textbf{Complexity of the Program V(G)} = P + 1 
 \end{equation}
-Where P = Number of node that contains condition.\cite{CN}
+Where P = Number of node that contains condition.\cite{CN}\\
+\par Cyclomatic number for each function of the module is represented in the table below:
 \begin{table}[h]
 \centering
 \begin{tabular}{|l|l|l|}
@@ -1043,23 +1040,26 @@ deviation.R & SoenDeviation() & 4 \\ \hline
  & SoenSort() & 2 \\ \hline
 \textbf{Total} & \textbf{} & \textbf{45} \\ \hline
 \end{tabular}
-\caption{Cyclomatic complexity.}
+\caption{Cyclomatic complexity for each function.}
 \label{my-label}
 \end{table}
 
-The \textbf{Cyclomatic Number} for the descriptive-statistic project is \textbf{45}.\\
+The overall \textbf{Cyclomatic Number} for the descriptive-statistics project is \textbf{45}.\\
 
-\textbf{Conclusion}: According to the Range-Risk distribution of complexity number. Each file in the project has a \textbf{simple} control flow, less than 10. But the whole project has cyclomatic number equal 45, that falls under category of High risk assessment. The source code has a very "complex", but manageable, control flow. 
+\textbf{Conclusion}: According to the Range-Risk distribution of complexity number, each class in the project has a \textbf{simple} control flow, less than 10. But the whole project has cyclomatic number equal 45, that falls under category of High risk assessment. The source code has a very complex, but manageable, control flow. 
 %-----------------------------------------------------------------
 \newpage
-\section{Part - Object-oriented metrics}
+\section{Object-oriented metrics}
+In this section several metrics are calculated: \textbf{WMC} (Weighted Method per Class), \textbf{CF} (Coupling Factor), \textbf{LCOM} (Lack of Cohesion in Methods). The class diagram for the project is represented below. Based on this diagram, \textbf{WMC}, \textbf{CF} and \textbf{LCOM} can be calculated.\\ 
+
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{classdiagram.png}
 \caption{Class diagram}
 \end{figure}
+\newpage
 \subsection{Weighted Methods per Class}
-
+The weights for the methods per class are represented in the table below.
 \begin{table}[h]
 \centering
 \begin{tabular}{|l|l|l|}
@@ -1078,32 +1078,37 @@ deviation.R & SoenDeviation() & 4 \\ \hline
  & SoenSort() & 2 \\ \hline
 \end{tabular}
 \caption{WMC.}
-\end{table}
+\end{table}\\ 
+\par \textbf{WMC} is calculated by using the following formula:
 \begin{equation}
     \textbf{WMC} =\sum^{n}_{i=1}{c_{i}(M_{i})}  
 \end{equation}
-Where C a class with methods M1 to Mn. Let c1(M1), to cn(Mn) be the complexity (weights) of the methods \cite{OOD}
+Where C a class with methods M1 to Mn. Let c1(M1), to cn(Mn) be the complexity (weights) of the methods \cite{OOD}. Therefore:
 \begin{equation}
     \textbf{WMC} = 1+5+5+9+4+4+4+2+5+4+2 = 45  
 \end{equation}
 \subsection{Coupling Factor}
 
-The coupling factor (CF) measures the average coupling between classes. 
+The coupling factor (CF) measures the average coupling between classes. \textbf{CF} is calculated using the following formula:
 \begin{equation}
     \textbf{CF} =\frac{\sum^{n}_{i=1}{\Bigg[\sum^{n}_{j=1}{isClient(C_{i},C_{j})\Bigg]}}}{n^2-n}  
 \end{equation}
+\par 
+\textit{isClient($C_{i},C_{j}$)} in the formula means that the class $C_{i}$ has a relationship with the class $C_{j}$ that is not inheritance. Based on the class diagram, the coupling factor is:
 \begin{equation}
     \textbf{CF} =\frac{0+6+2+1+2+1+1+1}{8^2-8}  
 \end{equation}
 \begin{equation}
     \textbf{CF} = 0.25
 \end{equation}
-The Coupling Factor is equal to 0.25.
+\par The \textbf{Coupling Factor} for this project is equal to 0.25.
 \subsection{Lack of Cohesion in Methods}
-The Lack of Cohesion in methods (LCOM).
+The Lack of Cohesion in methods (\textbf{LCOM}) is calculated by using the following formula:
 \begin{equation}
-    \textbf{LCOM} =\frac{\frac{1}{a}\Big[\sum^{a}_{i=1}{\mu(A_{i})\big]-m}}{1-m}
+    LCOM =\frac{\frac{1}{a}\Big[\sum^{a}_{i=1}{\mu(A_{i})\big]-m}}{1-m}
 \end{equation}
+
+\par For each attribute we have to know the number of methods that access this attribute. \textbf{LCOM} for each of the classes is calculated below:
 
 \begin{equation}
     LCOM_{stdlib} =\frac{\frac{1}{2}\times[2+2]-4}{1-4} = \frac{2}{3}
@@ -1127,16 +1132,21 @@ The Lack of Cohesion in methods (LCOM).
     LCOM_{deviation} = \frac{\frac{1}{1}\times1-1}{1-1} = \frac{0}{0} = 0
 \end{equation}
 
-For six classes LCOM is 0 and that means that these classes have maximum cohesion. Class stdlib has LCOM = $\frac{2}{3}$ and that means that cohesion in this class is not high, but not too low.
+For six classes \textbf{LCOM} is 0 and that means that these classes have maximum cohesion. Class stdlib has \textbf{LCOM} = $\frac{2}{3}$ and that means that cohesion in this class is not high, but not too low.
 %-----------------------------------------------------------------
-\section{Part - SLOC}
-The most common definition of physical SLOC is a count of lines of source code excluding comment lines.
-So, manually our \textbf{Physical SLOC = 265}. The Logical SLOC is number of executable "statements", such as if, for, while, <- and other expressions that may affect on the execution, excluding the comments and useless lines such closing bracket. So, manually our \textbf{Logical SLOC = 234}.\\
+\section{SLOC}
+The most common definition of the \textbf{Physical SLOC} is a count of lines of the source code excluding comment lines.
+So, manually our \textbf{Physical SLOC = 265}. The \textbf{Logical SLOC} is a number of the executable statements, excluding the comments. The \textbf{Logical SLOC} is language dependable. Manually our \textbf{Logical SLOC = 234}.\\
 
-\textbf{Physycal SLOC = 265} and \textbf{Logical SLOC = 236} according to the GitHub code editor as a tool for calculating the SLOC.
+\textbf{Physycal SLOC = 265} and \textbf{Logical SLOC = 236} according to the GitHub code editor used as a tool for calculating the SLOC.\\
+
+The manual calculation of the \textbf{Physical SLOC} and the use of the tool showed the same result, so the total \textbf{Physical SLOC} is equal to 265. \\
+
+The manual calculation of the \textbf{Logical SLOC} and the use of the tool showed different results (234 and 236 respectively). The difference probably appeared because the tool considers the executable statements in a different way that we did during the manual calculation. 
 %-----------------------------------------------------------------
-\section{Part - Correlations}
+\section{Correlations}
 \subsection{Scatter plot}
+\par \textbf{WMC} and the \textbf{Logical SLOC} for each class are represented in the table below:
 \begin{table}[h]
 \centering
 \begin{tabular}{|l|l|l|}
@@ -1156,12 +1166,12 @@ stdlib & 13 & 64 \\ \hline
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=\textwidth]{Rplot.png}
+\includegraphics[width=0.98\textwidth]{ggplot.png}
 \caption{Scatter Plot}
 \end{figure}
-
+\par Based on the represented Scatter Plot, there is a correlation between the \textbf{Logical SLOC} and \textbf{WMC}. If the \textbf{Logical SLOC} increases, \textbf{WMC} increases as well.
 \subsection{Correlation coefficient}
-Since the attributes are no distributed normally we can apply the Spearman's Rank Correlation Coefficient $r_{s}$.\cite{Correlation}
+Since the attributes are not distributed normally, we can apply the \textbf{Spearman's Rank Correlation Coefficient} $r_{s}$.\cite{Correlation}
 \begin{equation}
     r_{s} = 1-\frac{6\times\sum^{n}_{i=1}{d_{i}^2}}{n^3-n}  
 \end{equation}
@@ -1182,7 +1192,7 @@ stdlib    & 13 & 8   & 64 & 8   &  0 & 0\\ \hline
 \end{tabular}
 \caption{Data for Spearman's correlation coefficient}
 \end{table}
-
+\par Therefore:
 \begin{equation}
     r_{s} = 1-\frac{6\times(25+12.25+12.25+0+2.25+4+2.25+0)}{8^3-8}  
 \end{equation}
@@ -1192,10 +1202,10 @@ stdlib    & 13 & 8   & 64 & 8   &  0 & 0\\ \hline
 \begin{equation}
     r_{s} = 0.31  
 \end{equation}
-We have a positive correlation between WMC and Logilal SLOC for classes.
+\par Based on the \textbf{Spearman's Rank Correlation Coefficient}, we have a positive correlation between \textbf{WMC} and the \textbf{Logical SLOC} for all the classes.
 %-----------------------------------------------------------------
 \newpage
-\section{Part - Glossary}
+\section{Glossary}
 \begin{table}[h]
 \centering
 \begin{tabular}{|l|l|}
@@ -1216,6 +1226,7 @@ WMC & Weighted Method per Classes \\ \hline
 CF & Coupling Factor \\ \hline
 LCOM & Lack of Cohesion in Methods \\ \hline
 SLOC & Source Line Of Code \\ \hline
+OGS & Online Grading System \\ \hline
 $r_{s}$ & Spearman Rank Correlation Coefficient \\ \hline
 \end{tabular}
 \caption{Glossary}
