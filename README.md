@@ -1,5 +1,5 @@
 # SOEN 6611 Software Measurement 
-
+Report available: [here](https://github.com/4ban/soen6611/blob/master/doc/Report.pdf)
 ## Implementation
 Functions: 
 * `SoenMin(array)` return the min value of an array
